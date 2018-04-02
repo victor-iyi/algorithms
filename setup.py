@@ -1,13 +1,14 @@
 """
-  @author
-      Victor I. Afolabi
-      A.I. Engineer & Software developer
-      Email: <javafolabi@gmail.com>
-      GitHub: https://github.com/victor-iyiola
-
+  @author 
+    Victor I. Afolabi
+    Artificial Intelligence & Software Engineer.
+    Email: javafolabi@gmail.com
+    GitHub: https://github.com/victor-iyiola
+  
   @project
-    Created on 02 April, 2018 @ 6:42 PM.
-
+    File: setup.py
+    Created on 02 April, 2018 @ 7:54 PM.
+    
   @license
     MIT License
     Copyright (c) 2018. Victor. All rights reserved.
@@ -24,5 +25,5 @@ setup(
     license='MIT',
     author='Victor I. Afolabi',
     author_email='javafolabi@gmail.com',
-    description='',
+    description=''
 )
