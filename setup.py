@@ -15,12 +15,14 @@
 """
 
 from distutils.core import setup
+from Cython.Build import cythonize
+
 
 setup(
     name='algorithms',
     version='1.0.0',
-    packages=[],
-    requires=[],
+    ext_modules=cythonize('apis/cython/algorithms.pyx'),
+    # requires=[],
     url='https://github.com/victor-iyiola/algorithms',
     license='MIT',
     author='Victor I. Afolabi',
