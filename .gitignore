@@ -83,6 +83,7 @@ __pycache__/
 # C extensions
 
 # Distribution / packaging
+build/
 .Python
 develop-eggs/
 dist/
