@@ -52,3 +52,56 @@ Output:
 
     ```
 """
+# Import the array function from the built-in array module.
+from array import array
+
+
+# Decalre an array of signed integers.
+print('\nDecare an array of signed integers:')
+
+arr = array('i', [10, 20, 30, 40, 50])
+print(arr)
+
+# Traversing the array & printing all elements.
+print('\nArray traversal:')
+for i, a in enumerate(arr):
+    print('arr[{}] = {}'.format(i, a))
+
+# Assessing array elements.
+print('\nAssessing array elements:')
+print('arr[{}] = {}'.format(0, arr[0]))
+print('arr[{}] = {}'.format(2, arr[2]))
+
+# Insertion Operation.
+print('\nInserting `60` at the 2nd index:')
+arr.insert(1, 60)
+
+for a in arr:
+    print(a)
+
+# Deletion operation.
+print('\nRemove element `40` from the array.')
+arr.remove(40)
+
+for i, a in enumerate(arr):
+    print('arr[{}] = {}'.format(i, a))
+
+
+# Search operation.
+print('\nSearch retruns the index an element is located:')
+idx = arr.index(30)
+print('{} is at index: {}'.format(30, idx))
+
+# Update operation.
+print('\nUpdate the element at index `2`:')
+
+# Before update:
+print('Before: arr[2] = {}'.format(arr[2]))
+print(arr)
+
+# Update element at the 3rd index.
+arr[2] = 80
+
+# After update:
+print('After : arr[2] = {}'.format(arr[2]))
+print(arr)
