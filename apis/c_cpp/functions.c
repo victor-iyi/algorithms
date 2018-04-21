@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "functions.h"
 
 // NOTE: All functions must prepend C_ in their signature.
 
