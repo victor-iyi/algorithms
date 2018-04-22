@@ -55,6 +55,7 @@ Traversing the Node Elements:
 The additional operations like insertion and deletion can be done by implementing appropriate methods by using this node containers in the general data structures like linked lists and trees.
 """
 
+# pylint: disable=unused-variable
 class DayNames:
     """Creating a node called DayNames. DayNames has a data value which holds the
     values for a day, and also nextval which points to the next node value.
