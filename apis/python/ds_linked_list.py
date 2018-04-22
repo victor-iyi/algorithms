@@ -24,15 +24,15 @@ class Node:
     """Creation of a node.
 
     Keyword Arguments:
-        dataval {str} -- Value to be stored in this node. (default: {None})
+        data {str} -- Value to be stored in this node. (default: {None})
     """
 
-    def __init__(self, dataval: str=None):
-        self.dataval = dataval
-        self.nextval = None
+    def __init__(self, data: str=None):
+        self.data = data
+        self.next = None
 
     def __repr__(self):
-        return 'Node(dataval={})'.format(self.dataval)
+        return 'Node(data={})'.format(self.data)
 
     __str__ = __repr__
 
@@ -41,15 +41,15 @@ class SLinkedList:
     """Singly linked list where there's only one link between any two data elements."""
 
     def __init__(self):
-        self.headval: Node = None
+        self.head: Node = None
 
     def __repr__(self):
-        return 'SLinkedList({})'.format(self.headval)
+        return 'SLinkedList({})'.format(self.head)
 
     __str__ = __repr__
 
     def traverse(self, func, *args, **kwargs):
-        currval = self.headval
+        currval = self.head
 
         # Continue operation until there's no more Node element.
         while currval is not None:
@@ -57,26 +57,54 @@ class SLinkedList:
             func(currval, *args, **kwargs)
 
             # Assign the pointer of the next node element to the current data element.
-            currval = currval.nextval
+            currval = currval.next
+
+    def insert(self, newdata, pos='start', node: Node=None):
+        allowed = ['start', 'end', 'at']
+        if pos in allowed:
+            raise ValueError('pos must be one of {}'.format(','.join(allowed)))
+
+        if pos == 'at' and type(node) != Node:
+            raise TypeError('node must be of type Node')
+
+        newNode = Node(data=newdata)
+
+        if pos == 'start':
+            # Update the new node's next to the existing node.
+            newNode.next = self.head
+            self.head = newNode
+        elif pos == 'end':
+            if self.head is None:
+                self.head = newNode
+                return
+            last = self.head
+            while last.next:
+                last = last.next
+            last.next = newNode
+
+        else:
+            # Update the new node's next to the given node.
+            newNode.next = node.next
+            node.next = newNode
 
 
 # Creation of linked list.
 print('\nCreation of linked list')
 slist = SLinkedList()
-slist.headval = Node("Mon")
+slist.head = Node("Mon")
 
 e2 = Node("Tue")
 e3 = Node("Wed")
 
 # Link first node to second node.
-slist.headval.nextval = e2
+slist.head.next = e2
 
 # Link second Node to thrid node.
-e2.nextval = e3
+e2.next = e3
 
-print('slist.headval = {}'.format(slist.headval))
-print('e2.nextval = {}'.format(e2.nextval))
-print('e3.nextval = {}'.format(e3.nextval))
+print('slist.head = {}'.format(slist.head))
+print('e2.next = {}'.format(e2.next))
+print('e3.next = {}'.format(e3.next))
 
 
 """Traversing a LinkedList.
@@ -86,7 +114,7 @@ Singly Linked Lists can be traversed in only forward direction starting from the
 
 
 def print_elements(val):
-    print('currval = {}'.format(val))
+    print('{}'.format(val))
 
 
 print('\nTraversing a linked list.')
