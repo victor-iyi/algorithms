@@ -112,10 +112,5 @@ print('e3.next = {}'.format(e3.next))
 Singly Linked Lists can be traversed in only forward direction starting from the first data element. We simply print the value of the next data element by assigning the pointer of the next node to the current data element.
 """
 
-
-def print_elements(val):
-    print('{}'.format(val))
-
-
 print('\nTraversing a linked list.')
-slist.traverse(print_elements)
+slist.traverse(lambda val: print(f'{val}'))
