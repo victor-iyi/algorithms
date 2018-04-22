@@ -1,7 +1,9 @@
-"""Array is a container which can hold a fixed number of items and these items should be of the same type. Most of the data structures make use of arrays to implement their algorithms. Following are the important terms to understand the concept of Array:
+"""Array is a container which can hold a fixed number of items and these items should be of the same type. Most of
+the data structures make use of arrays to implement their algorithms. Following are the important terms to understand
+the concept of Array:
 
     - Element: Each item stored in an array is called element.
-    - Index: Each loacation of an element in an array has a numerical index, which is used to identify the element.
+    - Index: Each location of an element in an array has a numerical index, which is used to identify the element.
 
 Basic Operations:
 
@@ -17,11 +19,11 @@ Syntax:
 Array is created in Python by importing array module to the Python program. The array is declared as shown below:
 
     ```python
-    >>> from array import *
+    >>> from array import array
     >>> arrayName = array(typecode, [Initializers])
     ```
 
-Typecode are the codes that are used to define the type of value the array will hold. Some common typecodes used are:
+Typecode are the codes that are used to define the type of value the array will hold. Some common typecode used are:
 
     Typecode                        Value
         b           Represents signed integer of size 1 byte.
@@ -30,7 +32,7 @@ Typecode are the codes that are used to define the type of value the array will 
         i           Represents signed integer of size 2 bytes.
         I           Represents unsigned integer of size 2 bytes.
         f           Represents floating point of size 4 bytes.
-        d           Represents folating point of size 8 bytes.
+        d           Represents floating point of size 8 bytes.
 
 Example:
 
@@ -55,9 +57,8 @@ Output:
 # Import the array function from the built-in array module.
 from array import array
 
-
-# Decalre an array of signed integers.
-print('\nDecare an array of signed integers:')
+# Declare an array of signed integers.
+print('\nDeclare an array of signed integers:')
 
 arr = array('i', [10, 20, 30, 40, 50])
 print(arr)
@@ -86,9 +87,8 @@ arr.remove(40)
 for i, a in enumerate(arr):
     print('arr[{}] = {}'.format(i, a))
 
-
 # Search operation.
-print('\nSearch retruns the index an element is located:')
+print('\nSearch returns the index an element is located:')
 idx = arr.index(30)
 print('{} is at index: {}'.format(30, idx))
 

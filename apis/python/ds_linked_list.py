@@ -1,7 +1,7 @@
 """A linked list is a sequence of data elements, which are connected together via links. Each data element contains a connection to another data element in form of a pointer. Python does not have linked list in its standard library. We implement the concept of linked lists using the concepts of nodes.
 
 Singly Linked Lists:
-    In this type of data structure there's only one link between any two data elements. We create such a list and create additional methods to insert, update and remove elements fromt the list.
+    In this type of data structure there's only one link between any two data elements. We create such a list and create additional methods to insert, update and remove elements from the list.
 
 Operations:
     - Create
@@ -49,15 +49,15 @@ class SLinkedList:
     __str__ = __repr__
 
     def traverse(self, func, *args, **kwargs):
-        currval = self.head
+        curr_val = self.head
 
         # Continue operation until there's no more Node element.
-        while currval is not None:
+        while curr_val is not None:
             # Call function to be performed
-            func(currval, *args, **kwargs)
+            func(curr_val, *args, **kwargs)
 
             # Assign the pointer of the next node element to the current data element.
-            currval = currval.next
+            curr_val = curr_val.next
 
     def insert(self, newdata, pos='start', node: Node=None):
         allowed = ['start', 'end', 'at']
@@ -99,7 +99,7 @@ e3 = Node("Wed")
 # Link first node to second node.
 slist.head.next = e2
 
-# Link second Node to thrid node.
+# Link second Node to third node.
 e2.next = e3
 
 print('slist.head = {}'.format(slist.head))
@@ -113,4 +113,4 @@ Singly Linked Lists can be traversed in only forward direction starting from the
 """
 
 print('\nTraversing a linked list.')
-slist.traverse(lambda val: print(f'{val}'))
+slist.traverse(lambda val: print('{}'.format(val)))

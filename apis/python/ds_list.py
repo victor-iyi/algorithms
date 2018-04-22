@@ -1,6 +1,8 @@
-"""List is the most versatile data type available in Python which can be written as a list of comma-separated values (items) between square brakets. Important thing about a list is that items in a list need not to be of the same type (Unlike numsays).
+"""List is the most versatile data type available in Python which can be written as a list of comma-separated values
+(items) between square brackets. Important thing about a list is that items in a list need not to be of the same type
+(Unlike arrays).
 
-Creating a list is as simple as putting different comma-separated values between square brakets. 
+Creating a list is as simple as putting different comma-separated values between square brackets.
 For example:
 
     ```python
@@ -11,7 +13,8 @@ For example:
 
 Basic Operations:
 
-List respond to the `+` and `*` operators much like strings; they mean concatenation and repetition here too, except that the result is a new list, not a string.
+List respond to the `+` and `*` operators much like strings; they mean concatenation and repetition here too,
+except that the result is a new list, not a string.
 
      Description            Python Expression                Results
         Length                  len([1, 2, 3])                  3                 
@@ -52,15 +55,14 @@ for a in nums:
     print(a)
 
 # Deletion operation.
-print('\nRemove element `40` from the numsay.')
+print('\nRemove element `40` from the list:')
 nums.remove(40)
 
 for i, a in enumerate(nums):
     print('nums[{}] = {}'.format(i, a))
 
-
 # Search operation.
-print('\nSearch retruns the index an element is located:')
+print('\nSearch returns the index an element is located:')
 idx = nums.index(30)
 print('{} is at index: {}'.format(30, idx))
 
