@@ -42,7 +42,7 @@ Traversing the Node Elements:
         >>> e2.nextval = e4
         >>>
         >>> thisval = e1
-        >>> while thisvalue:
+        >>> while thisval:
                 print(thisval.dataval)
                 thisval = thisval.nextval
         Mon
@@ -56,6 +56,8 @@ The additional operations like insertion and deletion can be done by implementin
 """
 
 # pylint: disable=unused-variable
+
+
 class DayNames:
     """Creating a node called DayNames. DayNames has a data value which holds the
     values for a day, and also nextval which points to the next node value.
@@ -72,6 +74,9 @@ class DayNames:
         return 'DayNames(dataval="{}")'.format(self.dataval)
 
 
+# Creation of Nodes.
+print('\nCreation of Nodes:')
+
 e1 = DayNames('Mon')
 e2 = DayNames('Tue')
 e3 = DayNames('Wed')
@@ -82,3 +87,28 @@ e3.nextval = e2
 print('e1: {}'.format(e1))
 print('e2: {}'.format(e2))
 print('e3: {}'.format(e3))
+
+
+# Traversing Node elements.
+print('\nTraversing Node elements:')
+
+e1 = DayNames('Mon')
+e2 = DayNames('Wed')
+e3 = DayNames('Tue')
+e4 = DayNames('Thu')
+
+e1.nextval = e3
+e3.nextval = e2
+e2.nextval = e4
+
+# Set `thisval` to `nextval` of current node till end of the chain is reached.
+thisval = e1
+while thisval:
+    print(thisval.dataval)
+    thisval = thisval.nextval
+
+print('\nDisplay `nextval` for each nodes:')
+print('e1.nextval = {}'.format(e1.nextval))
+print('e2.nextval = {}'.format(e2.nextval))
+print('e3.nextval = {}'.format(e3.nextval))
+print('e4.nextval = {}'.format(e4.nextval))
