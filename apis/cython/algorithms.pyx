@@ -14,7 +14,7 @@ def fibonacci(int n):
 
   :returns:
     int, factorial(n)
-    Returns the nth fibonacii number.
+    Returns the nth fibonacci number.
   """
   cdef int a = 0, b = 1
   cdef int i = 0
