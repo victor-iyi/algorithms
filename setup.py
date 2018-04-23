@@ -21,7 +21,7 @@ from Cython.Build import cythonize
 setup(
     name='algorithms',
     version='1.0.0',
-    ext_modules=cythonize('apis/cython/algorithms.pyx'),
+    ext_modules=cythonize('apis/cython/algorithms.pyx', language='c++'),
     requires=["cython"],
     url='https://github.com/victor-iyiola/algorithms',
     license='MIT',
