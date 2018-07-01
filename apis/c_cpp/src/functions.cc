@@ -1,6 +1,5 @@
 #include "functions.h"
 
-/* NOTE: All functions must prepend C_ in their signature. */
 
 /**
  * Find the nth fibonacci number.
@@ -11,10 +10,12 @@
  * @return int
  *    The nth fibonacci number.
  */
-int C_fibonacci(int n) {
+int fibonacci(int n)
+{
   // Local variables.
   int a = 0, b = 1, temp;
-  for (int i = 0; i < n; i++) {
+  for (int i = 0; i < n; i++)
+  {
     temp = a;
     a = a + b;
     b = temp;
@@ -32,12 +33,13 @@ int C_fibonacci(int n) {
  * @return int
  *    Computed factorial of n.
  */
-int C_factorial(int n) {
+int factorial(int n)
+{
 
   // Base case.
   if (n < 2)
     return n;
 
   // Recursive call.
-  return C_factorial(n - 1);
+  return factorial(n - 1);
 }

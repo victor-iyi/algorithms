@@ -41,7 +41,7 @@ class SLinkedList:
     """Singly linked list where there's only one link between any two data elements."""
 
     def __init__(self):
-        self.head: Node = None
+        self.head = None
 
     def __repr__(self):
         return 'SLinkedList({})'.format(self.head)

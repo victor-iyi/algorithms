@@ -28,7 +28,7 @@ Creation of Nodes:
         ```
 
 Traversing the Node Elements:
-    
+
     We can traverse the elements of the node created above by creating a variable and assigning the first element to
     it. Then we use a while loop and `next` pointer to print out all the node elements. Note that we have one more
     additional data element and `next` pointers are properly arranged to get the output as a day of a week in a
@@ -40,7 +40,7 @@ Traversing the Node Elements:
                 def __init__(self, data=None):
                     self.data = data
                    self.next = None
-        >>> e1 = DayNames('Mon') 
+        >>> e1 = DayNames('Mon')
         >>> e2 = DayNames('Wed')
         >>> e3 = DayNames('Tue')
         >>> e4 = DayNames('Thu')

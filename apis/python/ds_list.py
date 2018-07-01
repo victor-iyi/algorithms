@@ -17,11 +17,11 @@ List respond to the `+` and `*` operators much like strings; they mean concatena
 except that the result is a new list, not a string.
 
      Description            Python Expression                Results
-        Length                  len([1, 2, 3])                  3                 
+        Length                  len([1, 2, 3])                  3
         Concatenation           [1, 2, 3] + [4, 5, 6]           [1, 2, 3, 4, 5, 6]
         Repetition              ['Hi'] * 3                      ['Hi', 'Hi', 'Hi']
-        Membership              3 in [1, 2, 3]                  True              
-        Iteration               for x in [1, 2, 3]:             1 2 3             
+        Membership              3 in [1, 2, 3]                  True
+        Iteration               for x in [1, 2, 3]:             1 2 3
                                   print(x, end=' ')
 
 """
