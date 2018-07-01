@@ -1,6 +1,5 @@
 #include "functions.h"
 
-
 /**
  * Find the nth fibonacci number.
  *

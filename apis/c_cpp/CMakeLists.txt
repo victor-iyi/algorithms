@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.8)
 # Project name, version & description.
 project(algorithms
         VERSION 1.0.0
-        DESCRIPTION "An Open Source implementation of common algorithms.")
+        DESCRIPTION "Data structures & Algorithm implementation in Python (written in C, C++ & Cython).")
 
 # Set shared libary build type to "Release build".
 set(CMAKE_BUILD_TYPE Debug)

@@ -27,5 +27,5 @@ setup(
     license='MIT',
     author='Victor I. Afolabi',
     author_email='javafolabi@gmail.com',
-    description=''
+    description='Data structures & Algorithm implementation in Python (written in C, C++ & Cython)'
 )

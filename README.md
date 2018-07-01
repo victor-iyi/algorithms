@@ -1,6 +1,6 @@
 # Algorithms
 
-### By [Victor I. Afolabi](https://github.com/victor-iyiola)
+## By [Victor I. Afolabi](https://github.com/victor-iyiola)
 
 > Data structures & Algorithm implementation in Python (written in C, C++ & Cython)
 
