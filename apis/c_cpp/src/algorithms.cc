@@ -1,6 +1,7 @@
 #include "../include/algorithms.h"
 #include <vector>
 
+// Sorting algorithms.
 namespace sort {
 
 /** Binary search algorithm.
@@ -21,4 +22,8 @@ template <typename T>
 std::vector<T> binary(const std::vector<T>& vec) {
   return vec;
 }
+
 };  // namespace sort
+
+// Search algorithms.
+namespace search {};
