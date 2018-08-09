@@ -5,7 +5,6 @@
 
 // For sorting algorithms.
 namespace sort {
-
 // Binary search.
 template <typename T>
 std::vector<T> binary(const std::vector<T>&);
@@ -13,7 +12,6 @@ std::vector<T> binary(const std::vector<T>&);
 
 // For search algorithms.
 namespace search {
-
 // Binary search (Iterative method).
 template <typename T>
 bool binary(const std::vector<T>&, const T&);
