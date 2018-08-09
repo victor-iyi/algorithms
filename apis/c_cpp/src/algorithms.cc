@@ -1,5 +1,4 @@
 #include "../include/algorithms.h"
-#include <vector>
 
 // Sorting algorithms.
 namespace sort {
@@ -20,6 +19,44 @@ namespace sort {
  */
 template <typename T>
 std::vector<T> binary(const std::vector<T>& vec) {
+  return vec;
+}
+
+/** Merge sort algorithm.
+ *
+ * @details:
+ *  Complexity:
+ *    Worst Case:   O(nlogn)
+ *    Average Case: O(logn)
+ *    Best Case:    O(logn)
+ *
+ * @params
+ *  const std::vector<T>& vec - Unsorted values.
+ *
+ * @returns
+ *  std::vector - Sotred values.
+ */
+template <typename T>
+std::vector<T> merge(const std::vector<T>& vec) {
+  return vec;
+}
+
+/** Quick sort algorithm.
+ *
+ * @details:
+ *  Complexity:
+ *    Worst Case:   O(nlogn)
+ *    Average Case: O(logn)
+ *    Best Case:    O(logn)
+ *
+ * @params
+ *  const std::vector<T>& vec - Unsorted values.
+ *
+ * @returns
+ *  std::vector - Sotred values.
+ */
+template <typename T>
+std::vector<T> quick(const std::vector<T>& vec) {
   return vec;
 }
 
@@ -45,10 +82,12 @@ namespace search {
  */
 template <typename T>
 bool binary(const std::vector<T>& values, const T& item) {
-  size_t left = 0;
-  size_t right = values.size();
-  // size_t mid = (right + left) / 2;
-  size_t mid = left + ((right - left) / 2);
+  // Left & right -most values.
+  size_t left = 0, right = values.size();
+
+  // Compute mid point.
+  // size_t mid = (right + left) / 2;       // Unsafe midpoint.
+  size_t mid = left + ((right - left) / 2);  // Safe midpoint.
 
   // Iterative method.
   while (left <= right) {

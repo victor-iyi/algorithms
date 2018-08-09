@@ -5,9 +5,17 @@
 
 // For sorting algorithms.
 namespace sort {
-// Binary search.
+// Binary sort.
 template <typename T>
 std::vector<T> binary(const std::vector<T>&);
+
+// Merge sort.
+template <typename T>
+std::vector<T> merge(const std::vector<T>&);
+
+// Quick sort.
+template <typename T>
+std::vector<T> quick(const std::vector<T>&);
 };  // namespace sort
 
 // For search algorithms.
