@@ -12,6 +12,15 @@ std::vector<T> binary(const std::vector<T>&);
 };  // namespace sort
 
 // For search algorithms.
-namespace search {};
+namespace search {
+
+// Binary search (Iterative method).
+template <typename T>
+bool binary(const std::vector<T>&, const T&);
+
+// Binary search (Recursive method).
+template <typename T>
+bool binary(const std::vector<T>&, const T&, size_t left, size_t right);
+};  // namespace search
 
 #endif /* defined(_ALGORITHMS_H) */
