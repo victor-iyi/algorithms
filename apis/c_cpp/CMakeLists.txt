@@ -10,7 +10,7 @@ project(algorithms
 set(CMAKE_BUILD_TYPE Debug)
 
 # For header files #include directives.
-include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # file(GLOB ...) allows for wildcard additions.
 file(GLOB_RECURSE SOURCES "src/*.cc")
