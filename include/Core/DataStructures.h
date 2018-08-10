@@ -3,6 +3,7 @@
 #define _DATA_STRUCTURE_H
 
 #include <vector>
+#include <string>
 
 namespace ds {
 
@@ -21,15 +22,16 @@ struct Node {
 struct LinkedList {
  public:
   Node* head;
-  Node* current;
 
   LinkedList();
   LinkedList(int);
-  LinkedList(Node*);
+  LinkedList(const Node&);
   ~LinkedList();
 
+  /* Operations */
   // Traversal.
   void traverse();
+  void traverse(void (*func)(int));
 
   // Insert
   void append(int);
@@ -37,8 +39,9 @@ struct LinkedList {
 
   // Search
   bool contains(int);
-
-  Node remove(int);
+  Node* remove();
+  void insert(int, const std::string&);
+  void insert(int);
 };
 
 // Tree data Structure.

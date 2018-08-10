@@ -48,13 +48,18 @@ class SLinkedList:
 
     __str__ = __repr__
 
-    def traverse(self, func, *args, **kwargs):
+    def traverse(self, func=None, *args, **kwargs):
+        # Handle empty LinkedList.
+        if self.head is None:
+            return
+
         curr_val = self.head
 
         # Continue operation until there's no more Node element.
         while curr_val is not None:
             # Call function to be performed
-            func(curr_val, *args, **kwargs)
+            if func is not None:
+                func(curr_val, *args, **kwargs)
 
             # Assign the pointer of the next node element to the current data element.
             curr_val = curr_val.next
@@ -65,7 +70,7 @@ class SLinkedList:
             raise ValueError('pos must be one of {}'.format(','.join(allowed)))
 
         if pos == 'at' and type(node) != Node:
-            raise TypeError('node must be of type Node')
+            raise TypeError('`node` must be supplied when `pos=at`.')
 
         newNode = Node(data=newdata)
 
@@ -77,10 +82,11 @@ class SLinkedList:
             if self.head is None:
                 self.head = newNode
                 return
-            last = self.head
-            while last.next:
-                last = last.next
-            last.next = newNode
+            # Go all the way through the linked list.
+            current = self.head
+            while current.next is not None:
+                current = current.next
+            current.next = newNode
 
         else:
             # Update the new node's next to the given node.
