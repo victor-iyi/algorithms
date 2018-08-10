@@ -86,6 +86,8 @@ class SLinkedList:
             current = self.head
             while current.next is not None:
                 current = current.next
+
+            # Ad the newNode to the end of the list.
             current.next = newNode
 
         else:
@@ -94,29 +96,30 @@ class SLinkedList:
             node.next = newNode
 
 
-# Creation of linked list.
-print('\nCreation of linked list')
-slist = SLinkedList()
-slist.head = Node("Mon")
+if __name__ == '__main__':
+    # Creation of linked list.
+    print('\nCreation of linked list')
+    slist = SLinkedList()
+    slist.head = Node("Mon")
 
-e2 = Node("Tue")
-e3 = Node("Wed")
+    e2 = Node("Tue")
+    e3 = Node("Wed")
 
-# Link first node to second node.
-slist.head.next = e2
+    # Link first node to second node.
+    slist.head.next = e2
 
-# Link second Node to third node.
-e2.next = e3
+    # Link second Node to third node.
+    e2.next = e3
 
-print('slist.head = {}'.format(slist.head))
-print('e2.next = {}'.format(e2.next))
-print('e3.next = {}'.format(e3.next))
+    print('slist.head = {}'.format(slist.head))
+    print('e2.next = {}'.format(e2.next))
+    print('e3.next = {}'.format(e3.next))
 
 
-"""Traversing a LinkedList.
+    """Traversing a LinkedList.
 
-Singly Linked Lists can be traversed in only forward direction starting from the first data element. We simply print the value of the next data element by assigning the pointer of the next node to the current data element.
-"""
+    Singly Linked Lists can be traversed in only forward direction starting from the first data element. We simply print the value of the next data element by assigning the pointer of the next node to the current data element.
+    """
 
-print('\nTraversing a linked list.')
-slist.traverse(lambda val: print('{}'.format(val)))
+    print('\nTraversing a linked list.')
+    slist.traverse(lambda val: print('{}'.format(val)))
