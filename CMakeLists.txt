@@ -54,7 +54,7 @@ endif()
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
 # Libaries directory.
-add_subdirectory("${PROJECT_SOURCE_DIR}/libs")
+add_subdirectory("${PROJECT_SOURCE_DIR}/lib")
 
 
 # Application executable.
