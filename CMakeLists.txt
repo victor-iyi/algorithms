@@ -51,10 +51,10 @@ endif()
 
 
 # Include path for libraries.
-include_directories("${PROJECT_SOURCE_DIR}/include")
+include_directories(include)
 
 # Libaries directory.
-add_subdirectory("${PROJECT_SOURCE_DIR}/lib")
+add_subdirectory(lib)
 
 
 # Application executable.

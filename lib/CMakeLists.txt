@@ -49,7 +49,7 @@ file(GLOB ALGORITHMS_TESTS "Tests/*cc")
 add_executable(algorithmsTests ${ALGORITHMS_TESTS})
 
 
-# Link dependencies of Todo Test lib.
+# Link dependencies of algorithmsTests lib.
 target_link_libraries(algorithmsTests algorithmsCore gmock_main)
 
 # Add Test for CTest.

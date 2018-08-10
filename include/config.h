@@ -5,5 +5,5 @@
 #define PROJECT_DESCRIPTION "Implementation of various Data structures and algorithms."
 
 // Version details.
-#define PROJECT_VERSION_MAJOR @PROJECT_VERSION_MAJOR @
-#define PROJECT_VERSION_MINOR @PROJECT_VERSION_MINOR @
+#define PROJECT_VERSION_MAJOR 1
+#define PROJECT_VERSION_MINOR 0
