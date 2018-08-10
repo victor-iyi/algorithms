@@ -5,29 +5,50 @@
 #include <vector>
 
 namespace ds {
-// Node data structure.
-template <typename T>
-class Node {
+
+struct Node {
  public:
-  T data;
+  int data;
+  Node* next;
 
-  Node(T);
-  Node(T&);
-  ~Node();
-
+  Node(int);
+  Node(int, Node*);
+  Node(const Node&);
+  // ~Node();
 };
 
-// LinedList data structure.
-class LinedList {};
+// LinkedList data structure.
+struct LinkedList {
+ public:
+  Node* head;
+  Node* current;
+
+  LinkedList();
+  LinkedList(int);
+  LinkedList(Node*);
+  ~LinkedList();
+
+  // Traversal.
+  void traverse();
+
+  // Insert
+  void append(int);
+  void prepend(int);
+
+  // Search
+  bool contains(int);
+
+  Node remove(int);
+};
 
 // Tree data Structure.
-class Tree {};
+struct Tree {};
 
 // Stack data structure.
-class Stack {};
+struct Stack {};
 
 // Queue data structure.
-class Queue {};
+struct Queue {};
 };  // namespace ds
 
 #endif  // _DATA_STRUCTURE_H
