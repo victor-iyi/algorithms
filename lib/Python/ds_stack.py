@@ -30,6 +30,9 @@ class Stack(object):
         self.stack.append(value)
 
     def pop(self):
+        if len(self.stack) < 1:
+            return None
+
         # Get the last element before deleting.
         last = self.stack[-1]
 
@@ -68,13 +71,17 @@ class Stack(object):
 if __name__ == '__main__':
     # Create an empty stack then push items to the stack.
     s = Stack()
+    print('Starting size: {}'.format(len(s)))
     s.push("Monday")
     s.push("Tuesday")
     s.push("Wednesday")
+    print('After pushing: {}'.format(len(s)))
     print(s.pop())
+    print('After one `pop`: {}'.format(len(s)))
 
     # Create a Stack data structure from a list.
     s2 = Stack.fromlist([1, 2, 3, 4, 5, 6])
-    print(s2.pop())
-    print(s2.pop())
-    print(s2.pop())
+    print('\nSize of `s2`: {}'.format(len(s2)))
+    print(s2.pop(), s2.pop(), s2.pop())
+    print(s2.pop(), s2.pop(), s2.pop())
+    print('Size of `s2`: {}'.format(len(s2)))

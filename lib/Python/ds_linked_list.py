@@ -10,6 +10,19 @@ Operations:
         - Insert at the beginning of a linked list.
         - Insert at the end of linked list.
     - Remove an item from a linked list.
+
+Complexity:
+    Insert:
+        Kind        Best    Average     Worst
+        "at":       O(1)    O(1)
+        "start":    O(1)    O(1)
+        "end":      O(n)    O(n)
+
+    Remove:
+        Best:       O(n)
+        Worst:      O(n)
+        Average:    O(n) 
+
 """
 
 """Creating a Linked List.
