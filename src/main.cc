@@ -4,8 +4,8 @@
 #include "Core/Algorithms.h"
 
 int main(int, char**) {
-  std::vector<int> values = {0, 1, 2, 3, 4, 5};
-  int item = 2;
+  // std::vector values = {0, 1, 2, 3, 4, 5};
+  // int item = 2;
 
   ds::Node node1(1);
   ds::Node node2(2);
@@ -18,7 +18,29 @@ int main(int, char**) {
   node3.next = &node4;
   node4.next = &node5;
 
-  std::cout << "LinkedList\n" << std::endl;
+  std::cout << "NODES:\n";
+  std::cout << node1 << " > " << node2 << " > " << node3 << " > " << node4
+            << " > " << node5 << '\n';
+
+  std::cout << "\nNODE (1): ";
+  node1.print();
+
+  // std::cout << "\nNODE (2): ";
+  // node2.print();
+
+  // std::cout << "\nNODE (3): ";
+  // node3.print();
+
+  // std::cout << "\nNODE (4): ";
+  // node4.print();
+
+  // std::cout << "\nNODE (5): ";
+  // node5.print();
+
+  // std::cout << node1 << " => " << node2 << " => " << node3 << " => " << node4
+  //           << " => " << node5 << '\n';
+
+  std::cout << "\n\nLinkedList:\n";
 
   ds::LinkedList list1(node1);
   list1.append(2);

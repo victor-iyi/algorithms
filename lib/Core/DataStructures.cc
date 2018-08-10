@@ -12,8 +12,12 @@ namespace ds {
  * +——————————————————————————————————————————————————————————————————————+
  */
 
+// Node::Node() : data(nullptr), next(nullptr) {
+//   std::cout << "Node(" << this->data << ");\n";
+// }
+
 Node::Node(int data) : data(data), next(nullptr) {
-  std::cout << "Node(" << this->data << ");\n";
+  // std::cout << "Node(" << this->data << ");\n";
 }
 
 Node::Node(int data, Node* next) : data(data), next(next) {}
@@ -23,6 +27,33 @@ Node::Node(const Node& node) {
   this->next = node.next;
 }
 
+void Node::print() {
+  Node* current = this;
+
+  std::cout << "Node(" << current->data << ")";
+  while (current->next != nullptr) {
+    std::cout << " -> Node(" << current->next->data << ")";
+
+    current = current->next;
+  }
+
+  std::cout << " -> NULL\n";
+}
+
+std::ostream& operator<<(std::ostream& stream, const Node& node) {
+  stream << "Node(" << node.data << ")";
+  // Node* current = (Node*)&node;
+  // stream << "Node(" << current->data << ")";
+  // while (current->next != nullptr) {
+  //   stream << " -> Node(" << current->next->data << ")";
+
+  //   current = current->next;
+  // }
+
+  // stream << " -> NULL";
+  return stream;
+}
+
 /*
  * +——————————————————————————————————————————————————————————————————————+
  * | +——————————————————————————————————————————————————————————————————+ |
@@ -30,9 +61,10 @@ Node::Node(const Node& node) {
  * | +——————————————————————————————————————————————————————————————————+ |
  * +——————————————————————————————————————————————————————————————————————+
  */
-
 LinkedList::LinkedList() : head(nullptr) {}
+
 LinkedList::LinkedList(const Node& head) : head(nullptr) {}
+
 LinkedList::LinkedList(int data) : head(new Node(data)) {}
 
 LinkedList::~LinkedList() { delete this->head; }
@@ -79,11 +111,7 @@ void LinkedList::append(int data) {
 
   // Otherwise we go through till the end.
   Node* current = this->head;
-  while (current->next != nullptr) {
-    // std::cout << current->data << ' ';
-    // Update the next element.
-    current = current->next;
-  }
+  while (current->next != nullptr) current = current->next;
 
   // Add element to the end.
   current->next = new Node(data);
@@ -96,12 +124,31 @@ void LinkedList::insert(int data, const std::string& how) {
     this->prepend(data);
   else if (how.compare("post") == 0)
     this->append(data);
-  else
-    // Error.
+  else  // Error.
     std::cout << "'pre' or 'post' insertion.\n";
 }
 
-Node* LinkedList::remove() { return new Node(1); }
-bool LinkedList::contains(int data) { return false; }
+Node* LinkedList::remove(int data) {
+  if (this->head == nullptr) return nullptr;
+
+  Node* current = this->head;
+  while (current->next != nullptr) {
+  }
+
+  return nullptr;
+}
+
+bool LinkedList::contains(int data) {
+  // Head is empty.
+  if (this->head == nullptr) return false;
+
+  Node* current = this->head;
+  while (current->next != nullptr) {
+    if (current->data == data) return true;
+    current = current->next;
+  }
+
+  return false;
+}
 
 };  // namespace ds
