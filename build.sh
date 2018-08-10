@@ -1,5 +1,6 @@
 #!/bin/sh
 
-cd build/apis && rm -rf *
+cd build/
 
-cmake ../../apis/c_cpp && make
+cmake -G "Unix Makefiles" ../ && make
+./algorithms
