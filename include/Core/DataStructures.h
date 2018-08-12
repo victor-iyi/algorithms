@@ -33,6 +33,8 @@ struct NodeTree {
   // Insert operation.
   void insert(int value);
   bool contains(int value);
+  void traverse();
+  void traverse(const std::string&);
 };
 
 // LinkedList data structure.

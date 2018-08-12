@@ -114,6 +114,29 @@ bool NodeTree::contains(int value) {
   }
 }
 
+void NodeTree::traverse() { this->traverse("in"); }
+
+void NodeTree::traverse(const std::string& kind) {
+  if (kind.compare("in") == 0) {
+    // Left -> root -> right.
+    if (this->left != nullptr) this->traverse(kind);
+    std::cout << this->data << ' ';
+    if (this->right != nullptr) this->traverse(kind);
+  } else if (kind.compare("pre")) {
+    // Root -> left -> right.
+    std::cout << this->data << ' ';
+    if (this->left != nullptr) this->traverse(kind);
+    if (this->right != nullptr) this->traverse(kind);
+  } else if (kind.compare("post")) {
+    // Left -> right -> root.
+    if (this->left != nullptr) this->traverse(kind);
+    if (this->right != nullptr) this->traverse(kind);
+    std::cout << this->data << ' ';
+  } else {
+    std::cout << "Values allowed are 'in', 'pre' or 'post'" << '\n';
+  }
+}
+
 /*
  * +——————————————————————————————————————————————————————————————————————+
  * | +——————————————————————————————————————————————————————————————————+ |
