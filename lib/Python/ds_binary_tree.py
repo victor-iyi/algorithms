@@ -17,3 +17,18 @@ class BinaryTreeNode(object):
                 self.right = value
             else:
                 self.insert(value)
+
+    def contains(self, value):
+        if value == self.data:
+            return True
+
+        if value < self.data:
+            if self.left is None:
+                return False
+            else:
+                return self.contains(value)
+        else:
+            if self.right is None:
+                return False
+            else:
+                return self.contains(value)
