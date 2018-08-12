@@ -57,6 +57,66 @@ std::ostream& operator<<(std::ostream& stream, const Node& node) {
 /*
  * +——————————————————————————————————————————————————————————————————————+
  * | +——————————————————————————————————————————————————————————————————+ |
+ * | | Data Structure: Binary Node Tree.
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * +——————————————————————————————————————————————————————————————————————+
+ */
+NodeTree::NodeTree(int data) : data(data), left(nullptr), right(nullptr) {}
+NodeTree::NodeTree(int data, NodeTree* leftNode, NodeTree* rightNode)
+    : data(data), left(leftNode), right(rightNode) {}
+
+NodeTree::~NodeTree() {
+  delete this->right;
+  delete this->left;
+}
+
+/** Insert into a binary tree.
+ *
+ * Complexity:
+ *  Best Case:    O(logn)
+ *  Average Case: O(logn)
+ *  Worst Case:   O(n)
+ *
+ */
+void NodeTree::insert(int value) {
+  if (value <= this->data) {
+    // Insert to the left.
+    if (this->left != nullptr)
+      this->left = new NodeTree(value);
+    else
+      this->insert(value);
+  } else {
+    // Insert to the right.
+    if (this->right != nullptr)
+      this->right = new NodeTree(value);
+    else
+      this->insert(value);
+  }
+}
+
+bool NodeTree::contains(int value) {
+  // If we're there return true.
+  if (this->data == value) return true;
+
+  // Traverse and find.
+  if (this->data < value) {
+    // Ask the left node.
+    if (this->left == nullptr)
+      return false;
+    else
+      return this->contains(value);
+  } else {
+    // Ask the right node.
+    if (this->right == nullptr)
+      return false;
+    else
+      return this->contains(value);
+  }
+}
+
+/*
+ * +——————————————————————————————————————————————————————————————————————+
+ * | +——————————————————————————————————————————————————————————————————+ |
  * | | Data Structure: LinkedList
  * | +——————————————————————————————————————————————————————————————————+ |
  * +——————————————————————————————————————————————————————————————————————+

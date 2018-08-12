@@ -22,6 +22,19 @@ struct Node {
   friend std::ostream& operator<<(std::ostream&, const Node&);
 };
 
+struct NodeTree {
+ public:
+  int data;
+  NodeTree *left, *right;
+
+  NodeTree(int);
+  ~NodeTree();
+  NodeTree(int, NodeTree*, NodeTree*);
+  // Insert operation.
+  void insert(int value);
+  bool contains(int value);
+};
+
 // LinkedList data structure.
 struct LinkedList {
  public:
