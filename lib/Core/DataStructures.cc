@@ -79,38 +79,35 @@ NodeTree::~NodeTree() {
  *
  */
 void NodeTree::insert(int value) {
-  if (value <= this->data) {
+  if (value < this->data) {
     // Insert to the left.
     if (this->left != nullptr)
       this->left = new NodeTree(value);
     else
       this->insert(value);
-  } else {
+  } else if (value > this->data) {
     // Insert to the right.
     if (this->right != nullptr)
       this->right = new NodeTree(value);
     else
       this->insert(value);
-  }
+  } else
+    this->data = value;
 }
 
 bool NodeTree::contains(int value) {
-  // If we're there return true.
+  // If we're there ,return true.
   if (this->data == value) return true;
 
   // Traverse and find.
   if (this->data < value) {
     // Ask the left node.
-    if (this->left == nullptr)
-      return false;
-    else
-      return this->contains(value);
+    if (this->left == nullptr) return false;
+    return this->contains(value);
   } else {
     // Ask the right node.
-    if (this->right == nullptr)
-      return false;
-    else
-      return this->contains(value);
+    if (this->right == nullptr) return false;
+    return this->contains(value);
   }
 }
 
