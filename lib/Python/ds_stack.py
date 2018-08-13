@@ -1,5 +1,7 @@
-"""In the English dictionary the word "Stack" means *arranging objects on over another*. It is the same way memory is allocated in this data structure. It stores the data elements in a similar fashion as a bunch of plates are stored one above another in the kitchen.
-So **Stack Data Structure** allows operations at one end wich can be called top of the stack. We can add elements or remove elements only form this end of the Stack.
+"""In the English dictionary the word "Stack" means *arranging objects on over another*. It is the same way memory is
+allocated in this data structure. It stores the data elements in a similar fashion as a bunch of plates are stored
+one above another in the kitchen. So **Stack Data Structure** allows operations at one end which can be called top of
+the stack. We can add elements or remove elements only form this end of the Stack.
 
 Operations:
     - Create
@@ -9,6 +11,9 @@ Operations:
     - Add elements to the top of a stack.
     - Remove last element from the stack.
 
+Complexity:
+    - Push  O(1)
+    - Pop   O(1)
 """
 
 
@@ -42,8 +47,8 @@ class Stack(object):
         return last
 
     def add(self, value):
-        # Ensure no dupicates.
-        if value not in stack:
+        # Ensure no duplicates.
+        if value not in self.stack:
             self.push(value)
             return True
 
