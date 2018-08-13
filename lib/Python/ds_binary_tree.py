@@ -1,8 +1,7 @@
 class BinaryTreeNode(object):
-
     def __init__(self, data):
         self.data = data
-        self.left, self.right = None
+        self.left, self.right = None, None
 
     def insert(self, value):
         if value <= self.data:
@@ -33,7 +32,7 @@ class BinaryTreeNode(object):
             else:
                 return self.contains(value)
 
-    def traverse(self, kind: str='in'):
+    def traverse(self, kind: str = 'in'):
         kinds = ('in', 'pre', 'post')
         if kind not in kinds:
             raise ValueError('`kind` must be one of {}'.format(''.join(kinds)))
@@ -42,12 +41,12 @@ class BinaryTreeNode(object):
             # Left -> Root -> Right.
             if self.left is not None:
                 self.traverse(kind)
-            print(data, end=' ')
+            print(self.data, end=' ')
             if self.right is not None:
                 self.traverse(kind)
         elif kind == 'pre':
             # Root -> Left -> Right.
-            print(data, end=' ')
+            print(self.data, end=' ')
             if self.left is not None:
                 self.traverse(kind)
             if self.right is not None:
@@ -58,4 +57,4 @@ class BinaryTreeNode(object):
                 self.traverse(kind)
             if self.right is not None:
                 self.traverse(kind)
-            print(data, end=' ')
+            print(self.data, end=' ')
