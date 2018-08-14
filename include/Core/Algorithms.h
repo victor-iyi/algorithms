@@ -23,8 +23,8 @@ size_t breadthFirstSearch(const std::vector<T>&, const T&);
 template <typename T>
 size_t depthFirstSearch(const std::vector<T>&, const T&);
 
-template <typename T>
-bool isPalindrome(const T&, size_t);
+template <typename T, size_t Size>
+bool isPalindrome(const T&);
 
 };  // namespace algo
 

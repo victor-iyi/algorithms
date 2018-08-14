@@ -64,11 +64,11 @@ size_t algo::depthFirstSearch(const std::vector<T>& graph, const T& item) {
   return algo::npos;
 }
 
-template <typename T>
-bool algo::isPalindrome(const T& item, size_t size) {
-  for (size_t i = 0; i < size; i++)
+template <typename T, size_t Size>
+bool algo::isPalindrome(const T& item) {
+  for (size_t i = 0; i < Size; i++)
     // If forward index & reversed index don't match. It's not a Palindrome.
-    if (item[i] != item[size + i - 1]) return false;
+    if (item[i] != item[Size - i - 1]) return false;
 
   return true;
 }
