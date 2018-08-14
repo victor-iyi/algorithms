@@ -9,17 +9,17 @@
  *    Worst:    O(n)
  */
 // template <typename T>
-size_t algo::binarySearch(const std::vector<int>& values, const int& item) {
+size_t algo::binarySearch(const std::vector<int>& data, const int& value) {
   // Lower & upper bounds.
-  size_t lower = 0, upper = values.size() - 1;
+  size_t lower = 0, upper = data.size() - 1;
 
   // Mid point.
   size_t middle = (upper + lower) / 2;
 
   do {
-    if (values[middle] == item)
+    if (data[middle] == value)
       return middle;
-    else if (values[middle] < item)
+    else if (data[middle] < value)
       upper = middle - 1;
     else
       lower = middle + 1;
@@ -55,11 +55,20 @@ size_t binarySearch(std::vector<T>& data, const T& value, const size_t& left,
 }
 
 template <typename T>
-size_t algo::breadthFirstSearch(const std::vector<T>& graph, T item) {
+size_t algo::breadthFirstSearch(const std::vector<T>& graph, const T& item) {
   return algo::npos;
 }
 
 template <typename T>
-size_t algo::depthFirstSearch(const std::vector<T>& graph, T item) {
+size_t algo::depthFirstSearch(const std::vector<T>& graph, const T& item) {
   return algo::npos;
+}
+
+template <typename T>
+bool algo::isPalindrome(const T& item, size_t size) {
+  for (size_t i = 0; i < size; i++)
+    // If forward index & reversed index don't match. It's not a Palindrome.
+    if (item[i] != item[size + i - 1]) return false;
+
+  return true;
 }

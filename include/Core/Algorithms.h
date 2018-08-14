@@ -8,19 +8,23 @@ namespace algo {
 // Invalid position (couldn't find element).
 static const size_t npos = -1;
 
-// Binary search algorithm.
+// Iterative binary search algorithm.
 // template <typename T>
 size_t binarySearch(const std::vector<int>&, const int&);
 
 // Recursive binary search algorithm.
 template <typename T>
-size_t binarySearch(const std::vector<T>&, const T&, const size_t& left, const size_t& right);
+size_t binarySearch(const std::vector<T>&, const T&, const size_t& left,
+                    const size_t& right);
 
 template <typename T>
-size_t breadthFirstSearch(const std::vector<T>&, T);
+size_t breadthFirstSearch(const std::vector<T>&, const T&);
 
 template <typename T>
-size_t depthFirstSearch(const std::vector<T>&, T);
+size_t depthFirstSearch(const std::vector<T>&, const T&);
+
+template <typename T>
+bool isPalindrome(const T&, size_t);
 
 };  // namespace algo
 

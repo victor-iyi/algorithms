@@ -5,11 +5,11 @@
 #include "../include/Core/DataStructures.h"
 
 int main(int, char**) {
-  // std::vector<int> values = {0, 1, 2, 3, 4, 5};
+  std::vector<int> values = {0, 1, 2, 3, 4, 5};
   // std::vector<char> values = {'a', 'b', 'c', 'd', 'e', 'f'};
-  std::vector<int> values = {'a', 'b', 'c', 'd', 'e', 'f'};
+  // std::vector<int> values = {'a', 'b', 'c', 'd', 'e', 'f'};
 
-  algo::binarySearch(values, 'a');
+  algo::binarySearch(values, 0);
 
   // ds::Node node1(1);
   // ds::Node node2(2);

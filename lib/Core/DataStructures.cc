@@ -1,7 +1,8 @@
 #include "../../include/Core/DataStructures.h"
 
-#include <functional>
+// #include <functional>
 #include <iostream>
+#include <utility>
 
 namespace ds {
 /*
@@ -250,7 +251,7 @@ void Graph::addEdge(const int& source, const int dest) {
   s->adjacent.insert(d);
 }
 int Graph::addNode(const NodeGraph* node) {
-  std::unordered_map<int, NodeGraph*>::iterator id = this->graphs.end();
+  // std::unordered_map<int, NodeGraph*>::iterator id = this->graphs.end();
 
   this->graphs.emplace(1, node);
   return 1;
@@ -268,7 +269,7 @@ bool Graph::hasPathDFS(const NodeGraph* source, const NodeGraph* dest,
                        std::unordered_set<int>& visited) {
   if (visited.find(source->id) != visited.end()) return false;
 
-  visited.emplace(source->id);
+  visited.insert(source->id);
 
   if (source == dest) return true;
 
