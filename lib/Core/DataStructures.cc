@@ -231,4 +231,48 @@ bool LinkedList::contains(int data) {
   return false;
 }
 
+/*
+ * +——————————————————————————————————————————————————————————————————————+
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * | | Data Structures: Graphs.
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * +——————————————————————————————————————————————————————————————————————+
+ */
+NodeGraph* Graph::getNode(const int& id) {
+  if (this->graphs.find(id) != this->graphs.end()) return this->graphs[id];
+  return nullptr;
+}
+
+void Graph::addEdge(const int& source, const int dest) {
+  NodeGraph* s = this->getNode(source);
+  NodeGraph* d = this->getNode(dest);
+  s->adjacent.insert(d);
+}
+
+bool Graph::hasPathBFS(const int& source, const int& dest) {
+  NodeGraph* s = this->getNode(source);
+  NodeGraph* d = this->getNode(dest);
+  std::unordered_set<int> visited;
+
+  return this->hasPathBFS(s, d, visited);
+}
+
+bool Graph::hasPathBFS(const NodeGraph* source, const NodeGraph* dest,
+                       std::unordered_set<int>& visited) {
+  return false;
+}
+
+bool Graph::hasPathDFS(const int& source, const int& dest) {
+  NodeGraph* s = this->getNode(source);
+  NodeGraph* d = this->getNode(dest);
+  std::unordered_set<int> visited;
+
+  return this->hasPathDFS(s, d, visited);
+}
+
+bool Graph::hasPathDFS(const NodeGraph* source, const NodeGraph* dest,
+                       std::unordered_set<int>& visited) {
+  return false;
+}
+
 };  // namespace ds

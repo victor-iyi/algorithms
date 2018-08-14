@@ -3,6 +3,8 @@
 #define _DATA_STRUCTURES_H
 
 #include <string>
+#include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
 namespace ds {
@@ -51,6 +53,14 @@ struct NodeTree {
   void traverse(const std::string&);
 };
 
+struct NodeGraph {
+ public:
+  int id;
+  std::unordered_set<NodeGraph*> adjacent;
+
+  NodeGraph(int);
+};
+
 /*
  * +——————————————————————————————————————————————————————————————————————+
  * | +——————————————————————————————————————————————————————————————————+ |
@@ -93,6 +103,27 @@ struct LinkedList {
  */
 // Tree data Structure.
 struct Tree {};
+
+/*
+ * +——————————————————————————————————————————————————————————————————————+
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * | | Graph data structure.
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * +——————————————————————————————————————————————————————————————————————+
+ */
+struct Graph {
+ public:
+  std::unordered_map<int, NodeGraph*> graphs;
+
+  NodeGraph* getNode(const int&);
+  void addEdge(const int&, const int);
+
+  bool hasPathBFS(const int&, const int&);
+  bool hasPathDFS(const int&, const int&);
+
+  bool hasPathBFS(const NodeGraph*, const NodeGraph*, std::unordered_set<int>&);
+  bool hasPathDFS(const NodeGraph*, const NodeGraph*, std::unordered_set<int>&);
+};
 
 // Stack data structure.
 struct Stack {};
