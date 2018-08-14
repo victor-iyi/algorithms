@@ -26,6 +26,10 @@ size_t depthFirstSearch(const std::vector<T>&, const T&);
 template <typename T, size_t Size>
 bool isPalindrome(const T&);
 
+bool isPrimeNumber(const int&);
+bool isPerfectNumber(const int&);
+bool isArmstrong(const int&);
+
 };  // namespace algo
 
 #endif  //_ALGORITHMS_H
