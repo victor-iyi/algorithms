@@ -82,5 +82,13 @@ bool algo::isPrimeNumber(const int& num) {
   return count == 0 && num != 1;
 }
 
-bool algo::isPerfectNumber(const int& num) { return false; }
+bool algo::isPerfectNumber(const int& num) {
+  int sum = 0;
+
+  for (int i = 1; i < num; i++)
+    if (num % i == 0) sum += i;
+
+  return (sum == num);
+}
+
 bool algo::isArmstrong(const int& num) { return false; }
