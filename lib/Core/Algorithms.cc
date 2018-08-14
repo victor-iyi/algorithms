@@ -2,7 +2,24 @@
 #include <iostream>
 
 // template <typename T>
-bool algo::binarySearch(const std::vector<int>& values, const int& item) {
+size_t algo::binarySearch(const std::vector<int>& values, const int& item) {
+  // Lower & upper bounds.
+  size_t lower = 0, upper = values.size() - 1;
+
+  // Mid point.
+  size_t middle = (upper + lower) / 2;
+
+  do {
+    if (values[middle] == item)
+      return middle;
+    else if (values[middle] < item)
+      upper = middle - 1;
+    else
+      lower = middle + 1;
+
+    middle = (upper + lower) / 2;  // recalculate the mid point.
+  } while (lower <= upper);
+
   std::cout << "Searching for \"" << item << "\" in: ";
   for (const int& val : values) std::cout << val << ' ';
 

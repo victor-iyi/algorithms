@@ -7,7 +7,7 @@ namespace algo {
 
 // Binary search algorithm.
 // template <typename T>
-bool binarySearch(const std::vector<int>&, const int&);
+size_t binarySearch(const std::vector<int>&, const int&);
 
 // Recursive binary search algorithm.
 template <typename T>
