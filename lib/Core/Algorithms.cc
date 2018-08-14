@@ -1,11 +1,20 @@
+#include "../../include/Core/Algorithms.h"
 #include <iostream>
-#include "Core/Algorithms.h"
 
 // template <typename T>
-bool algo::binarySearch(const std::vector<int>& values, int item) {
+bool algo::binarySearch(const std::vector<int>& values, const int& item) {
   std::cout << "Searching for \"" << item << "\" in: ";
-  for (int val : values)
-    std::cout << val << ' ';
+  for (const int& val : values) std::cout << val << ' ';
 
+  return false;
+}
+
+template <typename T>
+bool algo::breadthFirstSearch(const std::vector<T>& graph, T item) {
+  return false;
+}
+
+template <typename T>
+bool algo::depthFirstSearch(const std::vector<T>& graph, T item) {
   return false;
 }
