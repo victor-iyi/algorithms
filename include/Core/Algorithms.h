@@ -11,6 +11,8 @@ static const size_t npos = -1;
 // Iterative binary search algorithm.
 // template <typename T>
 size_t binarySearch(const std::vector<int>&, const int&);
+void displayBinarySearch(const std::vector<int>&);
+void displayBinarySearch(const std::vector<int>&, const int&, const int&);
 
 // Recursive binary search algorithm.
 template <typename T>

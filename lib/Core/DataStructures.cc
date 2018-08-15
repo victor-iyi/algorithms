@@ -239,57 +239,57 @@ bool LinkedList::contains(int data) {
  * | +——————————————————————————————————————————————————————————————————+ |
  * +——————————————————————————————————————————————————————————————————————+
  */
-NodeGraph* Graph::getNode(const int& id) {
-  if (this->graphs.find(id) != this->graphs.end()) return this->graphs[id];
-  return nullptr;
-}
+// NodeGraph* Graph::getNode(const int& id) {
+//   if (this->graphs.find(id) != this->graphs.end()) return this->graphs[id];
+//   return nullptr;
+// }
 
-void Graph::addEdge(const int& source, const int dest) {
-  NodeGraph* s = this->getNode(source);
-  NodeGraph* d = this->getNode(dest);
+// void Graph::addEdge(const int& source, const int dest) {
+//   NodeGraph* s = this->getNode(source);
+//   NodeGraph* d = this->getNode(dest);
 
-  s->adjacent.insert(d);
-}
-int Graph::addNode(const NodeGraph* node) {
-  // std::unordered_map<int, NodeGraph*>::iterator id = this->graphs.end();
+//   s->adjacent.insert(d);
+// }
+// int Graph::addNode(const NodeGraph* node) {
+//   // std::unordered_map<int, NodeGraph*>::iterator id = this->graphs.end();
 
-  this->graphs.emplace(1, node);
-  return 1;
-}
+//   this->graphs.emplace(1, node);
+//   return 1;
+// }
 
-bool Graph::hasPathDFS(const int& source, const int& dest) {
-  NodeGraph* s = this->getNode(source);
-  NodeGraph* d = this->getNode(dest);
-  std::unordered_set<int> visited;
+// bool Graph::hasPathDFS(const int& source, const int& dest) {
+//   NodeGraph* s = this->getNode(source);
+//   NodeGraph* d = this->getNode(dest);
+//   std::unordered_set<int> visited;
 
-  return this->hasPathDFS(s, d, visited);
-}
+//   return this->hasPathDFS(s, d, visited);
+// }
 
-bool Graph::hasPathDFS(const NodeGraph* source, const NodeGraph* dest,
-                       std::unordered_set<int>& visited) {
-  if (visited.find(source->id) != visited.end()) return false;
+// bool Graph::hasPathDFS(const NodeGraph* source, const NodeGraph* dest,
+//                        std::unordered_set<int>& visited) {
+//   if (visited.find(source->id) != visited.end()) return false;
 
-  visited.insert(source->id);
+//   visited.insert(source->id);
 
-  if (source == dest) return true;
+//   if (source == dest) return true;
 
-  for (auto child : source->adjacent)
-    if (this->hasPathDFS(child, dest, visited)) return true;
+//   for (auto child : source->adjacent)
+//     if (this->hasPathDFS(child, dest, visited)) return true;
 
-  return false;
-}
+//   return false;
+// }
 
-bool Graph::hasPathBFS(const int& source, const int& dest) {
-  NodeGraph* s = this->getNode(source);
-  NodeGraph* d = this->getNode(dest);
-  std::unordered_set<int> visited;
+// bool Graph::hasPathBFS(const int& source, const int& dest) {
+//   NodeGraph* s = this->getNode(source);
+//   NodeGraph* d = this->getNode(dest);
+//   std::unordered_set<int> visited;
 
-  return this->hasPathBFS(s, d, visited);
-}
+//   return this->hasPathBFS(s, d, visited);
+// }
 
-bool Graph::hasPathBFS(const NodeGraph* source, const NodeGraph* dest,
-                       std::unordered_set<int>& visited) {
-  return false;
-}
+// bool Graph::hasPathBFS(const NodeGraph* source, const NodeGraph* dest,
+//                        std::unordered_set<int>& visited) {
+//   return false;
+// }
 
 };  // namespace ds

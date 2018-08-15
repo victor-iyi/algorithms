@@ -17,6 +17,12 @@ size_t algo::binarySearch(const std::vector<int>& data, const int& value) {
   size_t middle = (upper + lower) / 2;
 
   do {
+    // Print remaining elements of vector to be searched.
+    algo::displayBinarySearch(data, lower, upper);
+
+    for (int i =0; i<middle; ++i) std::cout << "   ";
+    std::cout << " * " << '\n';
+
     if (data[middle] == value)
       return middle;
     else if (data[middle] < value)
@@ -52,6 +58,18 @@ size_t binarySearch(std::vector<T>& data, const T& value, const size_t& left,
     return algo::binarySearch(data, value, left, middle - 1);
   else
     return algo::binarySearch(data, value, middle + 1, right);
+}
+
+void algo::displayBinarySearch(const std::vector<int>& data) {
+  displayBinarySearch(data, 0, data.size());
+}
+
+void algo::displayBinarySearch(const std::vector<int>& data, const int& low,
+                               const int& high) {
+  for (int i = 0; i < low; ++i) std::cout << "   ";
+  for (int i = low; i <= high; ++i) std::cout << data[i] << " ";
+
+  std::cout << '\n';
 }
 
 template <typename T>

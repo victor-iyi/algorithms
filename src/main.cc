@@ -1,3 +1,7 @@
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
+#include <functional>
 #include <iostream>
 #include <vector>
 
@@ -5,11 +9,24 @@
 #include "../include/Core/DataStructures.h"
 
 int main(int, char**) {
-  std::vector<int> values = {0, 1, 2, 3, 4, 5};
-  // std::vector<char> values = {'a', 'b', 'c', 'd', 'e', 'f'};
-  // std::vector<int> values = {'a', 'b', 'c', 'd', 'e', 'f'};
+  // Seed random number generator.
+  srand(time(0));
 
-  algo::binarySearch(values, 0);
+  std::vector<int> data;
+  data.reserve(10);
+  for (int i = 0; i < 10; i++) data.push_back(10 + rand() % 20);  // dd10 - 99
+  int item = 10 + rand() % 20;
+
+  std::cout << "Searching for " << item << " in ";
+  std::for_each(data.begin(), data.end(),
+                [&](int value) { std::cout << value << ' '; });
+  std::cout << '\n';
+  size_t result = algo::binarySearch(data, item);
+
+  if (result != algo::npos)
+    std::cout << "\nFound at position " << result;
+  else
+    std::cout << "\nNot found!";
 
   // ds::Node node1(1);
   // ds::Node node2(2);
