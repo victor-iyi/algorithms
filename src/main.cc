@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm>
 #include <functional>
 #include <iostream>
 #include <vector>
@@ -15,6 +16,7 @@ int main(int, char**) {
   std::vector<int> data;
   data.reserve(10);
   for (int i = 0; i < 10; i++) data.push_back(10 + rand() % 20);  // dd10 - 99
+  std::sort(data.begin(), data.end());
   int item = 10 + rand() % 20;
 
   std::cout << "Searching for " << item << " in ";

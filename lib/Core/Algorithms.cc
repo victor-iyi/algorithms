@@ -20,8 +20,8 @@ size_t algo::binarySearch(const std::vector<int>& data, const int& value) {
     // Print remaining elements of vector to be searched.
     algo::displayBinarySearch(data, lower, upper);
 
-    for (int i =0; i<middle; ++i) std::cout << "   ";
-    std::cout << " * " << '\n';
+    // for (int i =0; i<middle; ++i) std::cout << "   ";
+    // std::cout << " ^ " << '\n';
 
     if (data[middle] == value)
       return middle;
