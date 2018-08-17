@@ -140,7 +140,7 @@ void algo::sort::bubble(std::vector<T>& vec) {
  *  If reversed element is same as the element, it's palindrome.
  */
 template <typename T, size_t Size>
-bool algo::check::isPalindrome(const T& item) {
+bool algo::is::palindrome(const T& item) {
   for (size_t i = 0; i < Size; i++)
     // If forward index & reversed index don't match. It's not a Palindrome.
     if (item[i] != item[Size - i - 1]) return false;
@@ -154,7 +154,7 @@ bool algo::check::isPalindrome(const T& item) {
  *  If
  *
  */
-bool algo::check::isPrimeNumber(const int& num) {
+bool algo::is::primeNumber(const int& num) {
   int count = 0;
 
   for (int i = 2; i <= num / 2; i++)
@@ -169,7 +169,7 @@ bool algo::check::isPrimeNumber(const int& num) {
  *    Sum of it's divisors is equal to the number.
  *
  */
-bool algo::check::isPerfectNumber(const int& num) {
+bool algo::is::perfectNumber(const int& num) {
   int sum = 0;
 
   for (int i = 1; i < num; i++)
@@ -178,4 +178,4 @@ bool algo::check::isPerfectNumber(const int& num) {
   return (sum == num);
 }
 
-bool algo::check::isArmstrong(const int& num) { return false; }
+bool algo::is::armstrong(const int& num) { return false; }

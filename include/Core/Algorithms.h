@@ -48,15 +48,15 @@ namespace sort {
 template <typename T>
 void bubble(std::vector<T>&);
 
-/* Merge Sort O(logn) */ 
+/* Merge Sort O(logn) */
 template <typename T>
 void merge(std::vector<T>&);
 
-/* Quick Sort */ 
+/* Quick Sort */
 template <typename T>
 void quick(std::vector<T>&);
 
-/* Insertion Sort */ 
+/* Insertion Sort */
 template <typename T>
 void insertion(std::vector<T>&);
 
@@ -69,21 +69,25 @@ void insertion(std::vector<T>&);
  * | +——————————————————————————————————————————————————————————————————+ |
  * +——————————————————————————————————————————————————————————————————————+
  */
-namespace check {
+namespace is {
 /* Palindrome */
 template <typename T, size_t Size>
-bool isPalindrome(const T&);
+bool palindrome(const T&);
+
+/* Anagram. */
+bool anagram(const std::string&);
 
 /* Prime Number. */
-bool isPrimeNumber(const int&);
+bool primeNumber(const int&);
 
 /* Perfect Number. */
-bool isPerfectNumber(const int&);
+bool perfectNumber(const int&);
 
 /* Armstrong Number. */
-bool isArmstrong(const int&);
+bool armstrong(const int&);
+bool armstrong(const std::string&);
 
-};  // namespace check
+};  // namespace is
 
 };  // namespace algo
 
