@@ -51,9 +51,10 @@ size_t algo::search::binarySearch(const std::vector<int>& data,
  *    Average: O(logn)
  *    Worst: O(n)
  */
-template <typename T>
-size_t binarySearch(std::vector<T>& data, const T& value, const size_t& left,
-                    const size_t& right) {
+// template <typename T>
+size_t algo::search::binarySearch(const std::vector<int>& data,
+                                  const int& value, const size_t& left,
+                                  const size_t& right) {
   // If the left & right crosses each other.
   if (left >= right) return algo::npos;
 
@@ -105,8 +106,8 @@ size_t algo::search::depthFirstSearch(const std::vector<T>& graph,
  *    Best: O(n)
  *    Average: O(n^2)
  */
-template <typename T>
-void algo::sort::bubble(std::vector<T>& vec) {
+// template <typename T>
+void algo::sort::bubble(std::vector<int>& vec) {
   bool isSorted = false;
   int lastUnsorted = vec.size() - 1;
 
@@ -115,7 +116,7 @@ void algo::sort::bubble(std::vector<T>& vec) {
     // 2, 3, 3, 5, 5, 7
     for (int i = 0; i < lastUnsorted; i++) {
       if (vec[i] > vec[i + 1]) {
-        T temp = vec[i];
+        int temp = vec[i];
         vec[i] = vec[i + 1];
         vec[i + 1] = temp;
         isSorted = false;

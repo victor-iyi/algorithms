@@ -1,6 +1,7 @@
 #ifndef _ALGORITHMS_H
 #define _ALGORITHMS_H
 
+#include <string>
 #include <vector>
 
 namespace algo {
@@ -19,13 +20,15 @@ namespace search {
 // Iterative binary search algorithm.
 // template <typename T>
 size_t binarySearch(const std::vector<int>&, const int&);
+
+// template <typename T>
+size_t binarySearch(const std::vector<int>&, const int&, const size_t& left,
+                    const size_t& right);
+
 void displayBinarySearch(const std::vector<int>&);
 void displayBinarySearch(const std::vector<int>&, const int&, const int&);
 
 // Recursive binary search algorithm.
-template <typename T>
-size_t binarySearch(const std::vector<T>&, const T&, const size_t& left,
-                    const size_t& right);
 
 template <typename T>
 size_t breadthFirstSearch(const std::vector<T>&, const T&);
@@ -45,8 +48,8 @@ size_t depthFirstSearch(const std::vector<T>&, const T&);
 namespace sort {
 
 /* Bubble Sort. O(n^2) */
-template <typename T>
-void bubble(std::vector<T>&);
+// template <typename T>
+void bubble(std::vector<int>&);
 
 /* Merge Sort O(logn) */
 template <typename T>

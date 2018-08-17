@@ -1,7 +1,6 @@
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
-#include <algorithm>
 #include <functional>
 #include <iostream>
 #include <vector>
@@ -15,15 +14,21 @@ int main(int, char**) {
 
   std::vector<int> data;
   data.reserve(10);
-  for (int i = 0; i < 10; i++) data.push_back(10 + rand() % 20);  // dd10 - 99
-  std::sort(data.begin(), data.end());
+  for (int i = 0; i < 10; i++) data.push_back(10 + rand() % 20);  // 10 - 19
+
+  // Custom bubble sort.
+  algo::sort::bubble(data);
+
+  // std::sort(data.begin(), data.end());
   int item = 10 + rand() % 20;
 
   std::cout << "Searching for " << item << " in ";
   std::for_each(data.begin(), data.end(),
                 [&](int value) { std::cout << value << ' '; });
   std::cout << '\n';
-  size_t result = algo::binarySearch(data, item);
+
+  // Custom binary search.
+  size_t result = algo::search::binarySearch(data, item);
 
   if (result != algo::npos)
     std::cout << "\nFound at position " << result;
