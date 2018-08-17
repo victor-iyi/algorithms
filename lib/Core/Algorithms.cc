@@ -4,7 +4,7 @@
 /*
  * +——————————————————————————————————————————————————————————————————————+
  * | +——————————————————————————————————————————————————————————————————+ |
- * | | Binary Search.
+ * | | Search Algorithms.
  * | +——————————————————————————————————————————————————————————————————+ |
  * +——————————————————————————————————————————————————————————————————————+
  */
@@ -16,7 +16,8 @@
  *    Worst:    O(n)
  */
 // template <typename T>
-size_t algo::binarySearch(const std::vector<int>& data, const int& value) {
+size_t algo::search::binarySearch(const std::vector<int>& data,
+                                  const int& value) {
   // Lower & upper bounds.
   size_t lower = 0, upper = data.size() - 1;
 
@@ -25,7 +26,7 @@ size_t algo::binarySearch(const std::vector<int>& data, const int& value) {
 
   do {
     // Print remaining elements of vector to be searched.
-    algo::displayBinarySearch(data, lower, upper);
+    algo::search::displayBinarySearch(data, lower, upper);
 
     // for (int i =0; i<middle; ++i) std::cout << "   ";
     // std::cout << " ^ " << '\n';
@@ -62,27 +63,39 @@ size_t binarySearch(std::vector<T>& data, const T& value, const size_t& left,
   if (data[middle] == value)
     return middle;
   else if (data[middle] < value)
-    return algo::binarySearch(data, value, left, middle - 1);
+    return algo::search::binarySearch(data, value, left, middle - 1);
   else
-    return algo::binarySearch(data, value, middle + 1, right);
+    return algo::search::binarySearch(data, value, middle + 1, right);
 }
 
-void algo::displayBinarySearch(const std::vector<int>& data) {
+void algo::search::displayBinarySearch(const std::vector<int>& data) {
   displayBinarySearch(data, 0, data.size());
 }
 
-void algo::displayBinarySearch(const std::vector<int>& data, const int& low,
-                               const int& high) {
+void algo::search::displayBinarySearch(const std::vector<int>& data,
+                                       const int& low, const int& high) {
   for (int i = 0; i < low; ++i) std::cout << "   ";
   for (int i = low; i <= high; ++i) std::cout << data[i] << " ";
 
   std::cout << '\n';
 }
 
+template <typename T>
+size_t algo::search::breadthFirstSearch(const std::vector<T>& graph,
+                                        const T& item) {
+  return algo::npos;
+}
+
+template <typename T>
+size_t algo::search::depthFirstSearch(const std::vector<T>& graph,
+                                      const T& item) {
+  return algo::npos;
+}
+
 /*
  * +——————————————————————————————————————————————————————————————————————+
  * | +——————————————————————————————————————————————————————————————————+ |
- * | | Bubble Sort.
+ * | | Sorting Algorithms.
  * | +——————————————————————————————————————————————————————————————————+ |
  * +——————————————————————————————————————————————————————————————————————+
  */
@@ -93,7 +106,7 @@ void algo::displayBinarySearch(const std::vector<int>& data, const int& low,
  *    Average: O(n^2)
  */
 template <typename T>
-void algo::bubbleSort(std::vector<T>& vec) {
+void algo::sort::bubble(std::vector<T>& vec) {
   bool isSorted = false;
   int lastUnsorted = vec.size() - 1;
 
@@ -113,18 +126,21 @@ void algo::bubbleSort(std::vector<T>& vec) {
   }
 }
 
-template <typename T>
-size_t algo::breadthFirstSearch(const std::vector<T>& graph, const T& item) {
-  return algo::npos;
-}
+/*
+ * +——————————————————————————————————————————————————————————————————————+
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * | | Algorithmic Checks.
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * +——————————————————————————————————————————————————————————————————————+
+ */
 
-template <typename T>
-size_t algo::depthFirstSearch(const std::vector<T>& graph, const T& item) {
-  return algo::npos;
-}
-
+/** Palindrome: whether a number is Palindrome or not.
+ *
+ * Summary:
+ *  If reversed element is same as the element, it's palindrome.
+ */
 template <typename T, size_t Size>
-bool algo::isPalindrome(const T& item) {
+bool algo::check::isPalindrome(const T& item) {
   for (size_t i = 0; i < Size; i++)
     // If forward index & reversed index don't match. It's not a Palindrome.
     if (item[i] != item[Size - i - 1]) return false;
@@ -132,7 +148,13 @@ bool algo::isPalindrome(const T& item) {
   return true;
 }
 
-bool algo::isPrimeNumber(const int& num) {
+/** If a number is a perfect number or not.
+ *
+ * Summary:
+ *  If
+ *
+ */
+bool algo::check::isPrimeNumber(const int& num) {
   int count = 0;
 
   for (int i = 2; i <= num / 2; i++)
@@ -141,7 +163,13 @@ bool algo::isPrimeNumber(const int& num) {
   return count == 0 && num != 1;
 }
 
-bool algo::isPerfectNumber(const int& num) {
+/** If a number is a perfect number or not.
+ *
+ * Summary:
+ *    Sum of it's divisors is equal to the number.
+ *
+ */
+bool algo::check::isPerfectNumber(const int& num) {
   int sum = 0;
 
   for (int i = 1; i < num; i++)
@@ -150,4 +178,4 @@ bool algo::isPerfectNumber(const int& num) {
   return (sum == num);
 }
 
-bool algo::isArmstrong(const int& num) { return false; }
+bool algo::check::isArmstrong(const int& num) { return false; }
