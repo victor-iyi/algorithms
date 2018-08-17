@@ -92,7 +92,8 @@ void algo::displayBinarySearch(const std::vector<int>& data, const int& low,
  *    Best: O(n)
  *    Average: O(n^2)
  */
-void algo::bubbleSort(std::vector<int>& vec) {
+template <typename T>
+void algo::bubbleSort(std::vector<T>& vec) {
   bool isSorted = false;
   int lastUnsorted = vec.size() - 1;
 
@@ -101,7 +102,7 @@ void algo::bubbleSort(std::vector<int>& vec) {
     // 2, 3, 3, 5, 5, 7
     for (int i = 0; i < lastUnsorted; i++) {
       if (vec[i] > vec[i + 1]) {
-        int temp = vec[i];
+        T temp = vec[i];
         vec[i] = vec[i + 1];
         vec[i + 1] = temp;
         isSorted = false;

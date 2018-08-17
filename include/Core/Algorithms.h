@@ -33,7 +33,8 @@ size_t binarySearch(const std::vector<T>&, const T&, const size_t& left,
  * | +——————————————————————————————————————————————————————————————————+ |
  * +——————————————————————————————————————————————————————————————————————+
  */
-void bubbleSort(std::vector<int>&);
+template <typename T>
+void bubbleSort(std::vector<T>&);
 
 template <typename T>
 size_t breadthFirstSearch(const std::vector<T>&, const T&);
