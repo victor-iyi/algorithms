@@ -8,6 +8,13 @@ namespace algo {
 // Invalid position (couldn't find element).
 static const size_t npos = -1;
 
+/*
+ * +——————————————————————————————————————————————————————————————————————+
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * | | Binary Search.
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * +——————————————————————————————————————————————————————————————————————+
+ */
 // Iterative binary search algorithm.
 // template <typename T>
 size_t binarySearch(const std::vector<int>&, const int&);
@@ -18,6 +25,15 @@ void displayBinarySearch(const std::vector<int>&, const int&, const int&);
 template <typename T>
 size_t binarySearch(const std::vector<T>&, const T&, const size_t& left,
                     const size_t& right);
+
+/*
+ * +——————————————————————————————————————————————————————————————————————+
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * | | Bubble sort.
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * +——————————————————————————————————————————————————————————————————————+
+ */
+void bubbleSort(std::vector<int>&);
 
 template <typename T>
 size_t breadthFirstSearch(const std::vector<T>&, const T&);
