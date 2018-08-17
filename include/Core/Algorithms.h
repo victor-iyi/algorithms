@@ -25,9 +25,6 @@ size_t binarySearch(const std::vector<int>&, const int&);
 size_t binarySearch(const std::vector<int>&, const int&, const size_t& left,
                     const size_t& right);
 
-void displayBinarySearch(const std::vector<int>&);
-void displayBinarySearch(const std::vector<int>&, const int&, const int&);
-
 // Recursive binary search algorithm.
 
 template <typename T>
@@ -38,6 +35,18 @@ size_t depthFirstSearch(const std::vector<T>&, const T&);
 
 };  // namespace search
 
+/*
+ * +——————————————————————————————————————————————————————————————————————+
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * | | Display.
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * +——————————————————————————————————————————————————————————————————————+
+ */
+namespace display {
+void binarySearch(const std::vector<int>&);
+void binarySearch(const std::vector<int>&, const int&, const int&);
+
+};  // namespace display
 /*
  * +——————————————————————————————————————————————————————————————————————+
  * | +——————————————————————————————————————————————————————————————————+ |

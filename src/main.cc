@@ -22,6 +22,11 @@ int main(int, char**) {
   // std::sort(data.begin(), data.end());
   int item = 10 + rand() % 20;
 
+  // Algorithmic checks.
+  if (algo::is::perfectNumber(item))
+    std::cout << item << " is a perfect number\n";
+  if (algo::is::primeNumber(item)) std::cout << item << " is a prime number\n";
+
   std::cout << "Searching for " << item << " in ";
   std::for_each(data.begin(), data.end(),
                 [&](int value) { std::cout << value << ' '; });

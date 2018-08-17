@@ -26,7 +26,7 @@ size_t algo::search::binarySearch(const std::vector<int>& data,
 
   do {
     // Print remaining elements of vector to be searched.
-    algo::search::displayBinarySearch(data, lower, upper);
+    algo::display::binarySearch(data, lower, upper);
 
     // for (int i =0; i<middle; ++i) std::cout << "   ";
     // std::cout << " ^ " << '\n';
@@ -54,6 +54,7 @@ size_t algo::search::binarySearch(const std::vector<int>& data,
 // template <typename T>
 size_t algo::search::binarySearch(const std::vector<int>& data,
                                   const int& value, const size_t& left,
+                                  // algo::search::binarySearch();
                                   const size_t& right) {
   // If the left & right crosses each other.
   if (left >= right) return algo::npos;
@@ -66,20 +67,10 @@ size_t algo::search::binarySearch(const std::vector<int>& data,
   else if (data[middle] < value)
     return algo::search::binarySearch(data, value, left, middle - 1);
   else
+    // algo::search::binarySearch();
     return algo::search::binarySearch(data, value, middle + 1, right);
 }
-
-void algo::search::displayBinarySearch(const std::vector<int>& data) {
-  displayBinarySearch(data, 0, data.size());
-}
-
-void algo::search::displayBinarySearch(const std::vector<int>& data,
-                                       const int& low, const int& high) {
-  for (int i = 0; i < low; ++i) std::cout << "   ";
-  for (int i = low; i <= high; ++i) std::cout << data[i] << " ";
-
-  std::cout << '\n';
-}
+// algo::search::binarySearch();
 
 template <typename T>
 size_t algo::search::breadthFirstSearch(const std::vector<T>& graph,
@@ -91,6 +82,25 @@ template <typename T>
 size_t algo::search::depthFirstSearch(const std::vector<T>& graph,
                                       const T& item) {
   return algo::npos;
+}
+
+/*
+ * +——————————————————————————————————————————————————————————————————————+
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * | | Display.
+ * | +——————————————————————————————————————————————————————————————————+ |
+ * +——————————————————————————————————————————————————————————————————————+
+ */
+void algo::display::binarySearch(const std::vector<int>& data) {
+  algo::display::binarySearch(data, 0, data.size());
+}
+
+void algo::display::binarySearch(const std::vector<int>& data, const int& low,
+                                 const int& high) {
+  for (int i = 0; i < low; ++i) std::cout << "   ";
+  for (int i = low; i <= high; ++i) std::cout << data[i] << " ";
+
+  std::cout << '\n';
 }
 
 /*
