@@ -72,15 +72,15 @@ size_t algo::search::binarySearch(const std::vector<int>& data,
 }
 // algo::search::binarySearch();
 
-template <typename T>
-size_t algo::search::breadthFirstSearch(const std::vector<T>& graph,
-                                        const T& item) {
+// template <typename T>
+size_t algo::search::breadthFirstSearch(const std::vector<int>& graph,
+                                        const int& item) {
   return algo::npos;
 }
 
-template <typename T>
-size_t algo::search::depthFirstSearch(const std::vector<T>& graph,
-                                      const T& item) {
+// template <typename T>
+size_t algo::search::depthFirstSearch(const std::vector<int>& graph,
+                                      const int& item) {
   return algo::npos;
 }
 
@@ -150,13 +150,21 @@ void algo::sort::bubble(std::vector<int>& vec) {
  * Summary:
  *  If reversed element is same as the element, it's palindrome.
  */
-template <typename T, size_t Size>
-bool algo::is::palindrome(const T& item) {
-  for (size_t i = 0; i < Size; i++)
-    // If forward index & reversed index don't match. It's not a Palindrome.
-    if (item[i] != item[Size - i - 1]) return false;
+bool algo::is::palindrome(const std::string& word) {
+  // If forward index & reversed index don't match,
+  // it's not a Palindrome.
+  for (size_t i = 0; i < word.size(); i++)
+    if (word[i] != word[word.size() - i - 1]) return false;
 
   return true;
+}
+
+/**
+ * Anagram words.
+ *
+ */
+bool algo::is::anagram(const std::string& word1, const std::string& word2) {
+  return false;
 }
 
 /** If a number is a perfect number or not.

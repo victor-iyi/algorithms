@@ -27,22 +27,23 @@ size_t binarySearch(const std::vector<int>&, const int&, const size_t& left,
 
 // Recursive binary search algorithm.
 
-template <typename T>
-size_t breadthFirstSearch(const std::vector<T>&, const T&);
+// template <typename T>
+size_t breadthFirstSearch(const std::vector<int>&, const int&);
 
-template <typename T>
-size_t depthFirstSearch(const std::vector<T>&, const T&);
+// template <typename T>
+size_t depthFirstSearch(const std::vector<int>&, const int&);
 
 };  // namespace search
 
 /*
  * +——————————————————————————————————————————————————————————————————————+
  * | +——————————————————————————————————————————————————————————————————+ |
- * | | Display.
+ * | | Display: Pretty-print.
  * | +——————————————————————————————————————————————————————————————————+ |
  * +——————————————————————————————————————————————————————————————————————+
  */
 namespace display {
+// Pretty print binary searching.
 void binarySearch(const std::vector<int>&);
 void binarySearch(const std::vector<int>&, const int&, const int&);
 
@@ -83,11 +84,10 @@ void insertion(std::vector<T>&);
  */
 namespace is {
 /* Palindrome */
-template <typename T, size_t Size>
-bool palindrome(const T&);
+bool palindrome(const std::string&);
 
 /* Anagram. */
-bool anagram(const std::string&);
+bool anagram(const std::string&, const std::string&);
 
 /* Prime Number. */
 bool primeNumber(const int&);
