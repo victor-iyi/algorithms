@@ -62,16 +62,17 @@ namespace sort {
 void bubble(std::vector<int>&);
 
 /* Merge Sort O(logn) */
-template <typename T>
-void merge(std::vector<T>&);
+// template <typename T>
+void merge(std::vector<int>&);
+void merge(std::vector<int>&, int, int);
 
 /* Quick Sort */
-template <typename T>
-void quick(std::vector<T>&);
+// template <typename T>
+void quick(std::vector<int>&);
 
 /* Insertion Sort */
-template <typename T>
-void insertion(std::vector<T>&);
+// template <typename T>
+void insertion(std::vector<int>&);
 
 };  // namespace sort
 

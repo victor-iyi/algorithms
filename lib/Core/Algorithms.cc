@@ -137,6 +137,16 @@ void algo::sort::bubble(std::vector<int>& vec) {
   }
 }
 
+/** Merge sort recursive implementation.
+ *
+ * Complexity:
+ *  Average: O(logn)
+ *
+ */
+void algo::sort::merge(std::vector<int>& vec) {}
+
+void algo::sort::merge(std::vector<int>& vec, int left, int right) {}
+
 /*
  * +——————————————————————————————————————————————————————————————————————+
  * | +——————————————————————————————————————————————————————————————————+ |
