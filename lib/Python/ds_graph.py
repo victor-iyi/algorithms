@@ -17,8 +17,9 @@
 
 
 class Graph(object):
-    """Graph is a pictorial representation of set of objects where
-    some pairs of objects are connected by links. The interconnected
+    """Graph is a pictorial representation of set of objects.
+
+    Some pairs of objects are connected by links. The interconnected
     objects are represented by points termed as vertices and the links
     that connect the vertices are called Edges.
 
@@ -30,7 +31,7 @@ class Graph(object):
         - Add an edge
     """
 
-    def __init__(self, g=None):
+    def __init__(self, g: dict = None):
         self.g = g or {}
         self.v = self.e = set()
 
@@ -38,7 +39,23 @@ class Graph(object):
         return 'Graph()'
 
     @classmethod
-    def from_dict(cls, d):
+    def from_dict(cls, d: dict):
+        """Create a graph object form a dictionary of vertices and edges.
+
+        Args:
+            d (dict): A dictionary containing vertices and edges.
+                Format:
+                    d = {
+                        'a': [ 'b', 'c' ],
+                        'b': [ 'a', 'd' ],
+                        'c': [ 'a', 'd' ],
+                        'd': [ 'e' ],
+                        'e': [ 'd' ],
+                    }
+
+        Returns:
+            Graph: An initialized Graph object.
+        """
         inst = cls(d)
         return inst
 
@@ -57,7 +74,7 @@ class Graph(object):
 
     @property
     def vertices(self):
-        return []
+        return list(self.g.keys())
 
 
 if __name__ == '__main__':
