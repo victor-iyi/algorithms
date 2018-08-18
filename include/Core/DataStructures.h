@@ -113,32 +113,32 @@ struct Tree {};
  * | +——————————————————————————————————————————————————————————————————+ |
  * +——————————————————————————————————————————————————————————————————————+
  */
-// struct Graph {
-//  public:
-//   /*
-//   graphs = {
-//     'A': set(['B', 'C']),
-//     'B': set(['A', 'D', 'F']),
-//     'C': set(['A', 'D', 'G']),
-//   }
+struct Graph {
+ public:
+  /*
+  graphs = {
+    'A': set(['B', 'C']),
+    'B': set(['A', 'D', 'F']),
+    'C': set(['A', 'D', 'G']),
+  }
 
-//   graphs = {
-//     0: [1, 2, 3],
-//     1: [0, 2, 3],
-//   }
-//   */
-//   std::unordered_map<int, NodeGraph*> graphs;
+  graphs = {
+    0: [1, 2, 3],
+    1: [0, 2, 3],
+  }
+  */
+  std::unordered_map<int, NodeGraph*> graphs;
 
-//   NodeGraph* getNode(const int&);
-//   void addEdge(const int&, const int);
-//   int addNode(const NodeGraph*);
+  NodeGraph* getNode(const int&);
+  void addEdge(const int&, const int);
+  int addNode(const NodeGraph*);
 
-//   bool hasPathBFS(const int&, const int&);
-//   bool hasPathDFS(const int&, const int&);
+  bool hasPathBFS(const int&, const int&);
+  bool hasPathDFS(const int&, const int&);
 
-//   bool hasPathBFS(const NodeGraph*, const NodeGraph*, std::unordered_set<int>&);
-//   bool hasPathDFS(const NodeGraph*, const NodeGraph*, std::unordered_set<int>&);
-// };
+  bool hasPathBFS(const NodeGraph*, const NodeGraph*, std::unordered_set<int>&);
+  bool hasPathDFS(const NodeGraph*, const NodeGraph*, std::unordered_set<int>&);
+};
 
 // Stack data structure.
 struct Stack {};
