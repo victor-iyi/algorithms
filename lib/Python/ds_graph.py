@@ -42,6 +42,24 @@ class Graph(object):
         inst = cls(d)
         return inst
 
+    def addEdge(self, e):
+        pass
+
+    def addVertex(self, v):
+        pass
+
+    def display(self):
+        pass
+
+    @property
+    def edges(self):
+        return []
+
+    @property
+    def vertices(self):
+        return []
+
 
 if __name__ == '__main__':
-    pass
+    graph = Graph()
+    graph.display()
