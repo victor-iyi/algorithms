@@ -78,5 +78,9 @@ class Graph(object):
 
 
 if __name__ == '__main__':
+    elements = {
+        'a': set([]),
+    }
+
     graph = Graph()
     graph.display()

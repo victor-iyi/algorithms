@@ -1,9 +1,11 @@
-"""Array is a container which can hold a fixed number of items and these items should be of the same type. Most of
-the data structures make use of arrays to implement their algorithms. Following are the important terms to understand
+"""Array is a container which can hold a fixed number of items and these items
+should be of the same type. Most of the data structures make use of arrays to
+implement their algorithms. Following are the important terms to understand
 the concept of Array:
 
     - Element: Each item stored in an array is called element.
-    - Index: Each location of an element in an array has a numerical index, which is used to identify the element.
+    - Index: Each location of an element in an array has a numerical index,
+        which is used to identify the element.
 
 Basic Operations:
 
@@ -16,14 +18,16 @@ Following are the basic operations supported by an array.
 
 Syntax:
 
-Array is created in Python by importing array module to the Python program. The array is declared as shown below:
+Array is created in Python by importing array module to the Python program.
+The array is declared as shown below:
 
     ```python
     >>> from array import array
     >>> arrayName = array(typecode, [Initializers])
     ```
 
-Typecode are the codes that are used to define the type of value the array will hold. Some common typecode used are:
+Typecode are the codes that are used to define the type of value the array
+will hold. Some common typecode used are:
 
     Typecode                        Value
         b           Represents signed integer of size 1 byte.

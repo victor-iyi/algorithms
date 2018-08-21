@@ -1,17 +1,22 @@
-"""There are situations when the allocation of memory to store the data cannot be in a continuous block of memory. So
-we take help of pointers along with the data, the address of the next location of data element is also stored. So we
-know the address of the next data element from the values of current data element. In general such structures are
-known as Pointers, but in Python we refer to them as Nodes.
+"""There are situations when the allocation of memory to store the data cannot
+be in a continuous block of memory. So we take help of pointers along with the
+data, the address of the next location of data element is also stored. So we
+know the address of the next data element from the values of current data
+element. In general such structures are known as Pointers, but in Python we
+refer to them as Nodes.
 
-Nodes are foundations on which various other data structures linked lists and trees can be handled in Python. There
-are two major operations that can be performed on Nodes: - Create a Node. - Traverse the node elements.
+Nodes are foundations on which various other data structures linked lists and
+trees can be handled in Python. There are two major operations that can be
+performed on Nodes: - Create a Node. - Traverse the node elements.
 
 Creation of Nodes:
 
-    The nodes are created by implementing a class which will hold the pointers along with the data element. In the
-    below example we create a class named DayNames to hold the names of weekdays. The `next` pointer is
-    initialized to null and three nodes are initialized with values as shown. The `next` pointer of node `e1`
-    points to `e3` while the `next` pointer of node `e3` points to `e2`.
+    The nodes are created by implementing a class which will hold the pointers
+    along with the data element. In the below example we create a class named
+    DayNames to hold the names of weekdays. The `next` pointer is initialized
+    to null and three nodes are initialized with values as shown. The `next`
+    pointer of node `e1` points to `e3` while the `next` pointer of node `e3`
+    points to `e2`.
 
         Example:
         ```python
@@ -29,10 +34,11 @@ Creation of Nodes:
 
 Traversing the Node Elements:
 
-    We can traverse the elements of the node created above by creating a variable and assigning the first element to
-    it. Then we use a while loop and `next` pointer to print out all the node elements. Note that we have one more
-    additional data element and `next` pointers are properly arranged to get the output as a day of a week in a
-    proper sequence.
+    We can traverse the elements of the node created above by creating a
+    variable and assigning the first element to it. Then we use a while loop
+    and `next` pointer to print out all the node elements. Note that we have
+    one more additional data element and `next` pointers are properly arranged
+    to get the output as a day of a week in a proper sequence.
 
     Example:
         ```python
@@ -60,8 +66,11 @@ Traversing the Node Elements:
 
         ```
 
-The additional operations like insertion and deletion can be done by implementing appropriate methods by using this
-node containers in the general data structures like linked lists and trees. """
+The additional operations like insertion and deletion can be done by
+implementing appropriate methods by using this node containers in the general
+data structures like linked lists and trees.
+
+"""
 
 
 # pylint: disable=unused-variable
