@@ -33,7 +33,7 @@ class DFS:
               (default: {None})
 
         Returns:
-          [type] -- [description]
+          set -- Vistited nodes.
         """
         # Visited set to keep track of visited node.
         visited = visited or set()
