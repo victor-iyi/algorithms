@@ -25,6 +25,19 @@
 
 
 def permute(idx, values):
+    """Find all possible arrangement of a given set of letters.
+
+    When we choose a pair we apply backtracking to verify if that exact pair
+    has already been created or not. If not already created, the pair is added
+    to the answer list else it is ignored.
+
+    Arguments:
+      idx {int} -- Length of each string list.
+      values {list} -- List of letters.
+
+    Returns:
+      list -- List of re-arrangements.
+    """
     if idx == 1:
         return values
 
