@@ -37,14 +37,6 @@ class Node(object):
 
         print('END')
 
-    # @data.setter
-    # def data(self, value):
-    #     self._data = value
-
-    # @next_node.setter
-    # def next(self, value):
-    #     self._next_node = value
-
     @property
     def data(self):
         return self._data
@@ -52,6 +44,14 @@ class Node(object):
     @property
     def next_node(self):
         return self._next_node
+
+    @data.setter
+    def data(self, value):
+        self._data = value
+
+    @next_node.setter
+    def next(self, value):
+        self._next_node = value
 
 
 if __name__ == '__main__':
