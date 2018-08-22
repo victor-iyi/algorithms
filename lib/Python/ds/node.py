@@ -30,9 +30,20 @@ class Node(object):
         return 'Node(data={})'.format(self._data)
 
     def display(self):
+        """Display current node and all it's connected nodes.
+
+        Example:
+            ```python
+            >>> n1 = Node("Wed")
+            >>> n2 = Node("Tue", next_node=n1)
+            >>> n3 = Node("Wed", next_node=n2)
+            >>> n3.display()
+            Node(data=Mon) -> Node(data=Tue) -> Node(data=Wed) -> END
+            ```
+        """
         current = self
         while current is not None:
-            print(current, end=' -> ')
+            print(current, '')
             current = current.next_node
 
         print('END')
