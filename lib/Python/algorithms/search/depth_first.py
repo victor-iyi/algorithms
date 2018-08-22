@@ -14,3 +14,7 @@
      MIT License
      Copyright (c) 2018. Victor I. Afolabi. All rights reserved.
 """
+
+
+if __name__ == '__main__':
+    pass
