@@ -14,3 +14,32 @@
      MIT License
      Copyright (c) 2018. Victor I. Afolabi. All rights reserved.
 """
+
+
+class BFS:
+
+    @staticmethod
+    def recursive(graph, start, visited=None):
+
+        return visited
+
+    @staticmethod
+    def iterative(graph, start):
+        pass
+
+    @staticmethod
+    def display(*args, **kwargs):
+        print(*args, **kwargs)
+
+
+if __name__ == '__main__':
+
+    elements = {
+        "a": set(["b", "c"]),
+        "b": set(["a", "d"]),
+        "c": set(["a", "d"]),
+        "d": set(["e"]),
+        "e": set(["a"])
+    }
+
+    BFS.iterative(elements, 'a')
