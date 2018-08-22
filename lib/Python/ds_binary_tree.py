@@ -33,7 +33,7 @@ class BinaryTreeNode(object):
             else:
                 return self.contains(value)
 
-    def traverse(self, kind: str = 'in'):
+    def traverse(self, kind='in'):
         kinds = ('in', 'pre', 'post')
         if kind not in kinds:
             raise ValueError('`kind` must be one of {}'.format(''.join(kinds)))
