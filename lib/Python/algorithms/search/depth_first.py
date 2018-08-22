@@ -41,10 +41,9 @@ class DFS:
         # Add node to visited set.
         visited.add(start)
 
-        DFS.display(start)
+        # DFS.display(start, end=' ')
 
         for node in graph[start] - visited:
-            # print(graph[start] - visited)
             DFS.recursive(graph, node, visited=visited)
 
         return visited
@@ -55,8 +54,8 @@ class DFS:
 
     @staticmethod
     def display(*args, **kwargs):
-        # print(*args, **kwargs)
-        pass
+        print(*args, **kwargs)
+        # pass
 
 
 if __name__ == '__main__':
