@@ -38,6 +38,9 @@ class Graph(object):
     def __repr__(self):
         return 'Graph()'
 
+    def __getitem__(self, item):
+        return self.g[item]
+
     @classmethod
     def from_dict(cls, d):
         """Create a graph object from a dictionary of vertices and edges.
