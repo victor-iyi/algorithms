@@ -125,6 +125,12 @@ class TreeNode(object):
             Check if `value` is in the tree.
 
         def traverse(kind):
+            Walk through the node and performs some function.
+
+    Parameters:
+        data: Data element in current node.
+        left: Left node of current node.
+        right: Right node of current node.
     """
 
     def __init__(self, data):
@@ -211,6 +217,9 @@ class TreeNode(object):
         Keyword Arguments:
             kind {str} -- Kind of traversal. In-order, Pre-order or Post-order
                 traversal (default: {'in'})
+
+            func {callable} -- A callable to execute on each node.
+                e.g lambda node, **kwargs: print(f'{node}', **kwargs)
 
         Raises:
             ValueError -- `kind` must be one of 'in', 'pre', 'post'.
