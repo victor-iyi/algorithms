@@ -18,8 +18,11 @@
 
 class DFS:
 
+    # Goal node.
+    goal = 'G'
+
     @staticmethod
-    def recursive(graph, start, visited=None):
+    def recursive(graph, start, visited=None, toVisit=None):
         """Depth first search/traversal.
 
         Implemented using Stacks to keep track of visted nodes.
@@ -36,39 +39,116 @@ class DFS:
           set -- Vistited nodes.
         """
         # Visited set to keep track of visited node.
-        visited = visited or set()
+        visited = visited or [start]
+        toVisit = toVisit or [start]
 
-        # Add node to visited set.
-        visited.add(start)
+        vertex = toVisit.pop()
+        if DFS.func(vertex):
+            return True
 
-        DFS.display(start, end=' ')
+        for child in graph[vertex]:
+            if child not in visited:
+                visited.append(child)
+                toVisit.append(child)
 
-        for node in graph[start] - visited:
-            DFS.recursive(graph, node, visited=visited)
+                # Recursively visit child nodes.
+                return DFS.recursive(graph, child, visited=visited,
+                                     toVisit=toVisit)
 
-        return visited
+        return False
 
     @staticmethod
-    def iterative():
-        pass
+    def iterative(graph, start):
+        visited = [start]
+        toVisit = [start]     # Stack DS.
+
+        while toVisit:
+            # Take from the end of visited.
+            vertex = toVisit.pop()
+
+            if DFS.func(vertex):
+                return True
+
+            for child in graph[vertex]:
+                if child not in visited:
+                    visited.append(child)
+                    toVisit.append(child)
+
+        return False
 
     @staticmethod
-    def display(*args, **kwargs):
-        print(*args, **kwargs)
-        # pass
+    def func(vertex):
+
+        print(vertex, end=' ')
+
+        if vertex == DFS.goal:
+            print('\nFound "{}"!'.format(DFS.goal))
+            return True
+
+        return False
 
 
 if __name__ == '__main__':
 
-    elements = {
-        "a": set(["b", "c"]),
-        "b": set(["a", "d"]),
-        "c": set(["a", "d"]),
-        "d": set(["e"]),
-        "e": set(["a"])
+    """
+    GRAPH
+    –––––
+
+    A ----- B
+    |       |
+    |       |
+    C ----- D --- E
+    """
+    graph1 = {
+        "A": ["B", "C"],
+        "B": ["A", "D"],
+        "C": ["A", "D"],
+        "D": ["E"],
+        "E": ["D"],
     }
+
+    # Set the Goal to 'E'.
+    DFS.goal = 'E'
 
     # Depth first traversal.
     print('Recursive solution:')
-    DFS.recursive(elements, 'a')
+    DFS.recursive(graph1, 'A')
+    print('\n')
+
+    print('Iterative Solution:')
+    DFS.iterative(graph1, 'A')
+    print('\n')
+
+    """
+    GRAPH
+    ––––––
+
+        C --------- E
+        |
+        A
+      / |           G
+     /  |          /
+    S --B -- D --/
+
+    """
+    graph2 = {
+        'S': ['A', 'B'],
+        'A': ['S', 'B', 'C'],
+        'B': ['S', 'A', 'D'],
+        'C': ['A', 'E'],
+        'D': ['B', 'G'],
+        'E': ['C'],
+        'G': ['D'],
+    }
+
+    # Set the Goal to 'G'
+    DFS.goal = 'G'
+
+    # Depth first traversal.
+    print('Recursive solution:')
+    DFS.recursive(graph2, 'S')
+    print('\n')
+
+    print('Iterative Solution:')
+    DFS.iterative(graph2, 'S')
     print('\n')

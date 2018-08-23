@@ -109,17 +109,17 @@ class BFS:
 if __name__ == '__main__':
 
     elements = {
-        "a": set(["b", "c"]),
-        "b": set(["a", "d"]),
-        "c": set(["a", "d"]),
-        "d": set(["e"]),
-        "e": set(["a"])
+        "A": ["B", "C"],
+        "B": ["A", "D"],
+        "C": ["A", "D"],
+        "D": ["E"],
+        "E": ["A"],
     }
 
     print('Recursive Solution:')
-    BFS.recursive(elements, 'a')
+    BFS.recursive(elements, 'A')
     print('\n')
 
     print('Iterative Solution:')
-    BFS.iterative(elements, 'b')
+    BFS.iterative(elements, 'A')
     print('\n')
