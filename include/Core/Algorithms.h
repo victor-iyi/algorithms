@@ -64,7 +64,8 @@ void bubble(std::vector<int>&);
 /* Merge Sort O(logn) */
 // template <typename T>
 void merge(std::vector<int>&);
-void merge(std::vector<int>&, int, int);
+void merge(std::vector<int>&, size_t, size_t);
+void mergeHalves(const std::vector<int>&, const std::vector<int>&);
 
 /* Quick Sort */
 // template <typename T>

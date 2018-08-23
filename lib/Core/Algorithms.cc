@@ -143,9 +143,16 @@ void algo::sort::bubble(std::vector<int>& vec) {
  *  Average: O(logn)
  *
  */
-void algo::sort::merge(std::vector<int>& vec) {}
+void algo::sort::merge(std::vector<int>& vec) {
+  size_t left = 0, right = vec.size();
+  size_t middle = (left + right) / 2;  
+}
 
-void algo::sort::merge(std::vector<int>& vec, int left, int right) {}
+void algo::sort::merge(std::vector<int>& vec, size_t left, size_t right) {}
+
+void algo::mergeHalves(std::vector<int>& left, std::vector<int>& right) {
+
+}
 
 /*
  * +——————————————————————————————————————————————————————————————————————+
