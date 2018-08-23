@@ -15,10 +15,17 @@
      Copyright (c) 2018. Victor I. Afolabi. All rights reserved.
 """
 
-from .search import *
-from .sort import *
+from algorithms.search.depth_first import DFS
+from algorithms.search.breadth_first import BFS
+
+# from algorithms.sort.merge import merge
+# from algorithms.sort.bubble import bubble
 
 
 __all__ = [
-    '',
+    # Search Algorithms.
+    'BFS', 'DFS',
+
+    # Sort Algorithms.
+    # 'merge', 'bubble',
 ]

@@ -1,4 +1,4 @@
-"""Data structures and algorithms.
+"""Data structures: Queue
 
    @author
      Victor I. Afolabi
@@ -89,6 +89,14 @@ class Queue(object):
     @queue.setter
     def queue(self, value):
         self._queue = value
+
+
+class PriorityQueue(object):
+    pass
+
+
+class Dequeue(object):
+    pass
 
 
 if __name__ == '__main__':

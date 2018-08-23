@@ -41,7 +41,7 @@ class DFS:
         # Add node to visited set.
         visited.add(start)
 
-        # DFS.display(start, end=' ')
+        DFS.display(start, end=' ')
 
         for node in graph[start] - visited:
             DFS.recursive(graph, node, visited=visited)
@@ -69,4 +69,6 @@ if __name__ == '__main__':
     }
 
     # Depth first traversal.
+    print('Recursive solution:')
     DFS.recursive(elements, 'a')
+    print('\n')
