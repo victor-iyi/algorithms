@@ -1,6 +1,5 @@
-/** Make change Problem.
- *
- * @solution
+/** Move all zeros present in an array to the end and
+ * return the same array.
  *
  * @author
  *   Victor I. Afolabi
@@ -9,10 +8,15 @@
  *   GitHub: https://github.com/victor-iyiola
  *
  * @project
- *   File: coins.cc
- *   Created on 26 August, 2018 @ 11:32 AM.
+ *   File: array-manipulation.cc
+ *   Created on 26 August, 2018 @ 11:11 AM.
  *
  * @license
  *   MIT License
  *   Copyright (c) 2018. Victor I. Afolabi. All rights reserved.
  **/
+
+#include <vector>
+
+void swap(const int&, const int&);
+void manipulate(const int&);
