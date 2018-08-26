@@ -35,10 +35,8 @@
 bool findCycle(const std::vector<int>& arr) {
   int p = 0, q = 0;
 
-  while (true) {
-    // Check out of bounds.
-    if (p < 0 || p >= arr.size() || q < 0 || q >= arr.size()) return false;
-
+  // Out of bounds.
+  while (p < 0 || p >= arr.size() || q < 0 || q >= arr.size()) {
     // First step for P.
     p = arr[p];
     if (p == q) return true;
@@ -52,4 +50,6 @@ bool findCycle(const std::vector<int>& arr) {
     q = arr[q];
     if (p == q) return true;
   }
+
+  return false;
 }

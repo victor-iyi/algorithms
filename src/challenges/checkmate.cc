@@ -20,8 +20,8 @@
  *   GitHub: https://github.com/victor-iyiola
  *
  * @project
- *   File: find-cycle-in-array.cc
- *   Created on 26 August, 2018 @ 10:15 AM.
+ *   File: checkmate.cc
+ *   Created on 26 August, 2018 @ 09:22 AM.
  *
  * @license
  *   MIT License
