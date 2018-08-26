@@ -18,25 +18,14 @@
 
 class Queue(object):
 
-    def __init__(self, q=None):
-        self._queue = list(q) or []
-        self._idx = 0
+    def __init__(self, *q):
+        self._queue = list(q)
 
     def __repr__(self):
-        q = ", ".join(map(str, self.queue))
-        return 'Queue(q=[{}])'.format(q)
+        return 'Queue({})'.format(', '.join(map(str, self._queue)))
 
     def __contains__(self, value):
         return value in self._queue
-
-    def __next__(self):
-        if self._idx >= len(self._queue):
-            self._idx = 0
-            raise StopIteration()
-
-        idx = self._idx
-        self._idx += 1
-        return self._queue[idx]
 
     def __iter__(self):
         for q in self._queue:
@@ -49,6 +38,10 @@ class Queue(object):
     def __len__(self):
         # Get length of the queue
         return len(self._queue)
+
+    @classmethod
+    def fromlist(cls, l):
+        return cls(*l)
 
     def peek(self):
         # Returns the first element in the list.
@@ -100,11 +93,21 @@ class Dequeue(object):
 
 
 if __name__ == '__main__':
-    q = Queue([1, 2, 3, 4, 5])
-    print(q)
+    q1 = Queue(1, 2, 3, 4, 5)
+    print('q1 =', q1)
 
-    q.add(6)
-    print(q)
+    q1.add(6)
+    print('\tq1.add(6)')
+    print('q1 =', q1)
 
-    print(q.remove(5))
-    print(q)
+    print('\tq1.remove(5) =', q1.remove(5))
+    print('q1 =', q1)
+
+    print('\tq1.poll() =', q1.poll())
+    print('q1 =', q1)
+
+    print()
+
+    q2 = Queue.fromlist([1, 2, 3, 4])
+    print('q2.poll() =', q2.poll())
+    print('q2 =', q2, '\n')
