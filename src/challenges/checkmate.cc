@@ -26,5 +26,6 @@ bool checkmate(const King& K, const Queen& Q) {
     return (K.x == Q.x || K.y == Q.y ||
             std::abs(static_cast<float>(K.x - Q.x)) ==
                 std::abs(static_cast<float>(K.y - Q.y)));
+
   return false;
 }
