@@ -1,11 +1,17 @@
-/** Given an array which contains indices to the same array,
- *  find if the given array has a cycle or not.
+/** Given a matrix containing 1s and 0s. Find the largest square made by 1s.
+ *
+ * @example
+ *    INPUT:  1   1   0   1   0
+ *            0   1   1   1   0
+ *            1   1   1   1   0
+ *            0   1   1   1   1
+ *
+ *    OUTPUT: 3
  *
  * @solution
- *   The classic Rabbit and Turtle technique is used to solve this
- *   problem. For every two steps that the Rabbit (P) takes, the
- *   Turtle (Q) takes one.
- *   A cycle is found if P == Q or if the array goes out of bounds.
+ *   RECURSIVE SOLUTION:
+ *
+ *   ITERATIVE SOLUTION:
  *
  * @author
  *   Victor I. Afolabi
@@ -25,16 +31,20 @@
 #include <vector>
 
 size_t largestSquare(const std::vector<std::vector<size_t> >& matrix) {
+  // Clone the matrix (cache) for computing neighbors.
   std::vector<std::vector<size_t> > cache = matrix;
+
   size_t result = 0, row, col;
 
   for (row = 0; row < matrix.size(); row++) {
     for (col = 0; col < matrix[0].size(); col++) {
-      if (row == 0 || col == 0) {
-      } else if (matrix[row][col] > 0) {
-        cache[row][col] = 1 + std::min(cache[row][col - 1], cache[row - 1][col],
-                                       cache[row - 1][col - 1]);
-      }  // end else if.
+      if (row == 0 || col == 0)
+        continue;  // Edges remain the same. No updates needed.
+      else if (matrix[row][col] > 0)
+        // Update based on neighbors.
+        // Update Rule: `min(neighbors) + self`
+        cache[row][col] += std::min(cache[row][col - 1], cache[row - 1][col],
+                                    cache[row - 1][col - 1]);
 
       // Update result.
       if (cache[row][col] > result) cache[row][col] = result;
