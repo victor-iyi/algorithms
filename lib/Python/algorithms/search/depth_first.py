@@ -59,6 +59,17 @@ class DFS:
 
     @staticmethod
     def iterative(graph, start):
+        """Depth First Search/Traversal iterative implementation.
+
+        Implementation using stack to keep track of visited nodes.
+
+        Arguments:
+            graph {dict} -- Graph elements.
+            start {any} -- Start node.
+
+        Returns:
+            bool -- True if path is found, false otherwise.
+        """
         visited = [start]
         toVisit = [start]     # Stack DS.
 
