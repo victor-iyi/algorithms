@@ -1,5 +1,31 @@
 """Data Structures: Trie.
 
+   @structure
+     A tree-like structure where each node represents a single character
+     of a given string. Unlike binary trees, a node may have more than two
+     children.
+                                 (*)
+                                /  \\
+                              /     \\
+                            /        \\
+                          /           \\
+                        /              \\
+                      /                 \\
+                     B                   S
+                  /  |  \\             /  \\
+                /    |   \\           /    \\
+              E      I     U         E       T
+            /  \\    |    / \\       |       |
+          /     \\   |   /   \\      |       |
+         A       L   D   L    Y      L       O
+         |       | (bid) |  (buy)    |      / \\
+         |       |       |           |     /   \\
+         R       L       L           L    C     P
+      (bear)   (bell)  (bull)      (sell) |   (stop)
+                                          |
+                                          K
+                                       (stock)
+
    @author
      Victor I. Afolabi
      Artificial Intelligence & Software Engineer.
@@ -60,12 +86,12 @@ class TrieNode(object):
         return self._is_word
 
     @count.setter
-    def count(self, val):
-        self._count = val
+    def count(self, value):
+        self._count = value
 
     @is_word.setter
-    def is_word(self, val):
-        self._is_word = val
+    def is_word(self, value):
+        self._is_word = value
 
 
 class Trie(object):
@@ -145,7 +171,17 @@ class Trie(object):
 
 if __name__ == '__main__':
     trie = Trie()
+    trie.add('Vic')
     trie.add('Victor')
     trie.add('Victoria')
 
-    print('you' in trie)
+    trie.add('Python')
+    trie.add('Programming')
+    trie.add('programmer')
+    trie.add('program')
+
+    print('p' in trie)
+    print(trie.find('victor'))
+    print(trie.find('prog'))
+    print(trie.find('program'))
+    print(trie.find('programm'))
