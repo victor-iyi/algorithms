@@ -3,8 +3,8 @@
 #define _DATA_STRUCTURES_H
 
 #include <string>
-#include <unordered_map>
-#include <unordered_set>
+#include <map>
+#include <set>
 #include <vector>
 
 namespace ds {
@@ -58,7 +58,7 @@ struct NodeGraph {
   int id;
 
   // Contains pointer to other nodes connected to this node.
-  std::unordered_set<NodeGraph*> adjacent;
+  std::set<NodeGraph*> adjacent;
 
   NodeGraph(int);
 };
@@ -127,7 +127,7 @@ struct Graph {
     1: [0, 2, 3],
   }
   */
-  std::unordered_map<int, NodeGraph*> graphs;
+  std::map<int, NodeGraph*> graphs;
 
   NodeGraph* getNode(const int&);
   void addEdge(const int&, const int);
@@ -136,8 +136,8 @@ struct Graph {
   bool hasPathBFS(const int&, const int&);
   bool hasPathDFS(const int&, const int&);
 
-  bool hasPathBFS(const NodeGraph*, const NodeGraph*, std::unordered_set<int>&);
-  bool hasPathDFS(const NodeGraph*, const NodeGraph*, std::unordered_set<int>&);
+  bool hasPathBFS(const NodeGraph*, const NodeGraph*, std::set<int>&);
+  bool hasPathDFS(const NodeGraph*, const NodeGraph*, std::set<int>&);
 };
 
 // Stack data structure.
