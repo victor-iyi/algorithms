@@ -138,6 +138,10 @@ class Trie(object):
         # a complete word.
         node.is_word = True
 
+    def addAll(self, sentence):
+        for word in sentence:
+            self.add(word)
+
     def find(self, prefix, node=None):
         node = node or self._root
 
