@@ -117,7 +117,7 @@ class Trie(object):
                 # If the current `node.char` == `char`,
                 # increment node count
                 if char == child.char:
-                    # Found charcter in the Trie.
+                    # Found character in the Trie.
                     found = True
 
                     # Increment possible words counter & update next node.
