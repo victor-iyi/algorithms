@@ -31,3 +31,28 @@ setup(
     (written in C, C++ & Cython).
     '''
 )
+
+
+"""
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "intelliSenseMode": "${default}",
+            "configurationProvider": "vector-of-bool.cmake-tools",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        }
+    ],
+    "version": 4
+}
+"""

@@ -252,8 +252,8 @@ void Graph::addEdge(const int& source, const int dest) {
 }
 
 int Graph::addNode(const NodeGraph* node) {
-  // std::unordered_map<int, NodeGraph*>::iterator id = this->graphs.end();
-  std::unordered_map<int, NodeGraph*>::const_iterator lastNode =
+  // std::map<int, NodeGraph*>::iterator id = this->graphs.end();
+  std::map<int, NodeGraph*>::const_iterator lastNode =
       this->graphs.end();
 
   std::cout << lastNode->first << " - " << lastNode->second << std::endl;
@@ -264,13 +264,13 @@ int Graph::addNode(const NodeGraph* node) {
 bool Graph::hasPathDFS(const int& source, const int& dest) {
   NodeGraph* s = this->getNode(source);
   NodeGraph* d = this->getNode(dest);
-  std::unordered_set<int> visited;
+  std::set<int> visited;
 
   return this->hasPathDFS(s, d, visited);
 }
 
 bool Graph::hasPathDFS(const NodeGraph* source, const NodeGraph* dest,
-                       std::unordered_set<int>& visited) {
+                       std::set<int>& visited) {
   if (visited.find(source->id) != visited.end()) return false;
 
   visited.insert(source->id);
@@ -286,13 +286,13 @@ bool Graph::hasPathDFS(const NodeGraph* source, const NodeGraph* dest,
 bool Graph::hasPathBFS(const int& source, const int& dest) {
   NodeGraph* s = this->getNode(source);
   NodeGraph* d = this->getNode(dest);
-  std::unordered_set<int> visited;
+  std::set<int> visited;
 
   return this->hasPathBFS(s, d, visited);
 }
 
 bool Graph::hasPathBFS(const NodeGraph* source, const NodeGraph* dest,
-                       std::unordered_set<int>& visited) {
+                       std::set<int>& visited) {
   return false;
 }
 
