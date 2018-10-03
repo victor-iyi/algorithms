@@ -5,8 +5,8 @@
 #include <iostream>
 #include <vector>
 
-#include "../include/Core/Algorithms.h"
-#include "../include/Core/DataStructures.h"
+#include "Core/Algorithms.h"
+#include "Core/DataStructures.h"
 
 int main(int, char**) {
   // Seed random number generator.

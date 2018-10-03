@@ -1,4 +1,4 @@
-#include "../../include/Core/Algorithms.h"
+#include "Core/Algorithms.h"
 #include <iostream>
 
 /*
