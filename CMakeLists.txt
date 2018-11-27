@@ -12,6 +12,10 @@ project("${PROJECT_NAME}"
         VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
         DESCRIPTION "${PROJECT_DESCRIPTION}")
 
+set(CMAKE_CXX_STANDARD 17)
+if(MSVC)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
+endif(MSVC)
 
 # Enables testing. (Enables `add_test()` cmd).
 enable_testing()
@@ -27,25 +31,31 @@ configure_file(
 
 
 # Set warning flags.
-if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "gcc" OR 
+if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "gcc" OR
    "${CMAKE_CXX_COMPILER_ID}" STREQUAL "clang")
 
-   # Use this warnings for gcc or clang compilers.
+   # Use these warnings for gcc or clang compilers.
   set(warnings "-Wall -Wextra -Werror")
 
+  # Use these compiler flag for gcc or clang compilers.
+  set(compiler_flags "${CMAKE_CXX_FLAGS} -std=c++17")
+
+# Microsoft Visual Studio Compiler.
 elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 
-# Uset these warnings for MSVC compiler.
+  # Use these warnings for MSVC compiler.
   set(warnings "/W4 /WX /EHsc")
 
+  # Use these compiler flag for gcc or clang compilers.
+  set(compiler_flags "${CMAKE_CXX_FLAGS} /std:c++17")
 endif()
 
 
 # Set language flags.
 if(NOT CONFIGURED_ONCE)
-  set(CMAKE_CXX_FLAGS "${warnings}"
+  set(CMAKE_CXX_FLAGS "${warnings} ${compiler_flags}"
       CACHE STRING "Flags used by compiler during all build types." FORCE)
-  set(CMAKE_C_FLAGS "${warnings}"
+  set(CMAKE_C_FLAGS "${warnings} ${compiler_flags}"
       CACHE STRING "Flags used by compiler during all build types." FORCE)
 endif()
 
@@ -66,11 +76,11 @@ add_executable(algorithms ${SOURCES})
 target_link_libraries(algorithms algorithmsCore)
 
 
-# Adds test to current directory which will be run by CTest. 
+# Adds test to current directory which will be run by CTest.
 # Only if `enable_testing()` is enabled.
 add_test(AlgorithmsExecutable algorithms)
 
 
 # Set configuration check.
-set(CONFIGURED_ONCE TRUE 
+set(CONFIGURED_ONCE TRUE
     CACHE INTERNAL "A flag showing CMake has been configured at least once.")
