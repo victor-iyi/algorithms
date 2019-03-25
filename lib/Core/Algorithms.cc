@@ -13,7 +13,7 @@
  * Binary search iterative implementation.
  *
  * Complexity:
- *    Average:  O(logn)
+ *    Average:  O(log(n))
  *    Worst:    O(n)
  */
 // template <typename T>
@@ -49,7 +49,7 @@ size_t algo::search::binarySearch(const std::vector<int>& data,
 /** Binary Search Recursive implementation.
  *
  * Complexity:
- *    Average: O(logn)
+ *    Average: O(log(n))
  *    Worst: O(n)
  */
 // template <typename T>
@@ -80,7 +80,7 @@ size_t algo::search::breadthFirstSearch(const std::vector<int>& graph,
 }
 
 // template <typename T>
-size_t algo::search::depthFirstSearch(const std::vector<int>& graph,
+std::size_t algo::search::depthFirstSearch(const std::vector<int>& graph,
                                       const int& item) {
   return algo::npos;
 }
@@ -96,7 +96,8 @@ void algo::display::binarySearch(const std::vector<int>& data) {
   algo::display::binarySearch(data, 0, data.size());
 }
 
-void algo::display::binarySearch(const std::vector<int>& data, const int& low,
+void algo::display::binarySearch(const std::vector<int>& data,
+                                 const int& low,
                                  const int& high) {
   for (int i = 0; i < low; ++i) std::cout << "   ";
   for (int i = low; i <= high; ++i) std::cout << data[i] << " ";
