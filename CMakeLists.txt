@@ -19,14 +19,14 @@ endif(MSVC)
 
 # Enables testing. (Enables `add_test()` cmd).
 enable_testing()
-
+set(ALGORITHMS_DIR "${CMAKE_SOURCE_DIR}/algorithms")
 
 # Make CMake Configurations to be available in source files.
 configure_file(
   # Where configurations are defined.
-  "${CMAKE_SOURCE_DIR}/build/config.h"
+  "${CMAKE_BINARY_DIR}/build/config.h"
   # Where CMake writes auto configuration @build time.
-  "${CMAKE_SOURCE_DIR}/include/config.h"
+  "${ALGORITHMS_DIR}/include/config.h"
 )
 
 
@@ -61,15 +61,15 @@ endif()
 
 
 # Include path for libraries.
-include_directories(include)
+include_directories("${ALGORITHMS_DIR}/include")
 
 # Libaries directory.
-add_subdirectory(lib)
+add_subdirectory("algorithms")
 
 
 # Application executable.
-file(GLOB_RECURSE SOURCES "src/**.cc")
-add_executable(algorithms ${SOURCES})
+file(GLOB_RECURSE EXAMPLES "${ALGORITHMS_DIR}/src/examples/**.cc")
+add_executable(algorithms ${EXAMPLES})
 
 
 # Link libraries.

@@ -15,6 +15,8 @@
      Copyright (c) 2018. Victor I. Afolabi. All rights reserved.
 """
 
+from typing import Dict, List
+
 
 class Graph(object):
     """Graph is a pictorial representation of set of objects.
@@ -42,7 +44,7 @@ class Graph(object):
         return self.g[item]
 
     @classmethod
-    def from_dict(cls, d):
+    def from_dict(cls, d: Dict[str, List[str]]):
         """Create a graph object from a dictionary of vertices and edges.
 
         Dictionary takes the form of:

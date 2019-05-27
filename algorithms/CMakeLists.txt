@@ -1,5 +1,5 @@
 # Path to google test.
-set(GOOGLE_TEST_DIR "Dependencies/googletest"
+set(GOOGLE_TEST_DIR "vendor/googletest"
     CACHE PATH "Path to Google Test Distribution.")
 
 
@@ -16,7 +16,7 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 
 elseif(APPLE)
 
-  # Tell GoogleTest to use it's own version of std::tr1 namespace - which is not 
+  # Tell GoogleTest to use it's own version of std::tr1 namespace - which is not
   # present in C++ 11.
   add_definitions(-DGTEST_USE_OWN_TR1_TUPLE=1)
 
@@ -32,19 +32,19 @@ set_property(TARGET gtest APPEND_STRING PROPERTY COMPILE_FLAGS " -w")
 
 
 # Specify compiler's search path for GoogleTest.
-include_directories(SYSTEM 
+include_directories(SYSTEM
                     "${GOOGLE_TEST_DIR}/googletest/include"
                     "${GOOGLE_TEST_DIR}/googlemock/include")
 
 # Algorithms (core) source library files.
-file(GLOB ALGORITHMS_CORE "Core/*.cc")
+file(GLOB ALGORITHMS_CORE "src/algorithms/*.cc")
 add_library(algorithmsCore ${ALGORITHMS_CORE})
 
 
 # Todo (test) source files.
-file(GLOB ALGORITHMS_TESTS "Tests/*cc")
+file(GLOB ALGORITHMS_TESTS "tests/*cc")
 
-# Build executable - where algorithmsCore & 
+# Build executable - where algorithmsCore &
 # gmock are it's dependencies.
 add_executable(algorithmsTests ${ALGORITHMS_TESTS})
 

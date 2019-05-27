@@ -1,4 +1,4 @@
-from libs.cython import algorithms
+from algorithms.cython import algorithms
 
 
 def main():

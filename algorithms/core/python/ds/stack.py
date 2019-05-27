@@ -1,10 +1,13 @@
 """Data structures: Stack
 
    @summary
-     In the English dictionary the word "Stack" means *arranging objects on over another*. It is the same way memory is
-     allocated in this data structure. It stores the data elements in a similar fashion as a bunch of plates are stored
-     one above another in the kitchen. So **Stack Data Structure** allows operations at one end which can be called top of
-     the stack. We can add elements or remove elements only form this end of the Stack.
+     In the English dictionary the word "Stack" means *arranging objects
+     on over another*. It is the same way memory is allocated in this data
+     structure. It stores the data elements in a similar fashion as a bunch
+     of plates are stored one above another in the kitchen. So
+     **Stack Data Structure** allows operations at one end which can be called
+     top of the stack. We can add elements or remove elements only form this
+     end of the Stack.
 
      Operations:
          - Create

@@ -14,45 +14,20 @@
     Copyright (c) 2018. Victor. All rights reserved.
 """
 
-from distutils.core import setup
+from distutils.core import setup, Extension
 from Cython.Build import cythonize
 
+algorithms = Extension('*', sources=['algorithms/cython/**.pyx'])
 
 setup(
     name='algorithms',
     version='1.0.0',
-    ext_modules=cythonize('apis/cython/algorithms.pyx', language='c++'),
+    ext_modules=cythonize(algorithms),
     requires=["cython"],
     url='https://github.com/victor-iyiola/algorithms',
     license='MIT',
     author='Victor I. Afolabi',
     author_email='javafolabi@gmail.com',
-    description=''' Data structures & Algorithm implementation in Python
-    (written in C, C++ & Cython).
-    '''
+    description='Data structures & Algorithm (written in C, C++ & Cython).',
+    long_description=open('README.md').read()
 )
-
-
-"""
-{
-    "configurations": [
-        {
-            "name": "Mac",
-            "includePath": [
-                "${workspaceFolder}/**",
-                "${workspaceFolder}/include"
-            ],
-            "defines": [],
-            "macFrameworkPath": [
-                "/System/Library/Frameworks",
-                "/Library/Frameworks"
-            ],
-            "compilerPath": "/usr/bin/clang",
-            "intelliSenseMode": "${default}",
-            "configurationProvider": "vector-of-bool.cmake-tools",
-            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
-        }
-    ],
-    "version": 4
-}
-"""

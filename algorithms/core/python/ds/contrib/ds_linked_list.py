@@ -1,7 +1,12 @@
-"""A linked list is a sequence of data elements, which are connected together via links. Each data element contains a connection to another data element in form of a pointer. Python does not have linked list in its standard library. We implement the concept of linked lists using the concepts of nodes.
+"""A linked list is a sequence of data elements, which are connected together
+via links. Each data element contains a connection to another data element in
+form of a pointer. Python does not have linked list in its standard library.
+We implement the concept of linked lists using the concepts of nodes.
 
 Singly Linked Lists:
-    In this type of data structure there's only one link between any two data elements. We create such a list and create additional methods to insert, update and remove elements from the list.
+    In this type of data structure there's only one link between any two data
+    elements. We create such a list and create additional methods to insert,
+    update and remove elements from the list.
 
 Operations:
     - Create
@@ -21,16 +26,16 @@ Complexity:
     Remove:
         Best:       O(n)
         Worst:      O(n)
-        Average:    O(n) 
+        Average:    O(n)
 
 """
 
 """Creating a Linked List.
 
-A linked list is created by using the node class. We create a Node object and create another class to use this node object. We pass the appropriate values through the node object to point it to the next data elements.
+A linked list is created by using the node class. We create a Node object and
+create another class to use this node object. We pass the appropriate values
+through the node object to point it to the next data elements.
 """
-
-# pylint: disable=unused-variable
 
 
 class Node:
@@ -51,15 +56,16 @@ class Node:
 
 
 class SLinkedList:
-    """Singly linked list where there's only one link between any two data elements."""
+    """Singly linked list where there's only one link between any two
+    data elements.
+
+    """
 
     def __init__(self):
         self.head = None
 
     def __repr__(self):
         return 'SLinkedList({})'.format(self.head)
-
-    __str__ = __repr__
 
     def traverse(self, func=None, *args, **kwargs):
         # Handle empty LinkedList.
@@ -74,7 +80,8 @@ class SLinkedList:
             if func is not None:
                 func(curr_val, *args, **kwargs)
 
-            # Assign the pointer of the next node element to the current data element.
+            # Assign the pointer of the next node element to the current data
+            # element.
             curr_val = curr_val.next
 
     def insert(self, newdata, pos='start', node: Node=None):
@@ -128,10 +135,12 @@ if __name__ == '__main__':
     print('e2.next = {}'.format(e2.next))
     print('e3.next = {}'.format(e3.next))
 
-
     """Traversing a LinkedList.
 
-    Singly Linked Lists can be traversed in only forward direction starting from the first data element. We simply print the value of the next data element by assigning the pointer of the next node to the current data element.
+    Singly Linked Lists can be traversed in only forward direction starting
+    from the first data element. We simply print the value of the next data
+    element by assigning the pointer of the next node to the current data
+    element.
     """
 
     print('\nTraversing a linked list.')
