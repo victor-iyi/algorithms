@@ -38,19 +38,18 @@ include_directories(SYSTEM
 
 # Algorithms (core) source library files.
 file(GLOB ALGORITHMS_CORE "src/algorithms/*.cc")
-add_library(algorithmsCore ${ALGORITHMS_CORE})
+add_library(algorithms ${ALGORITHMS_CORE})
 
 
 # Todo (test) source files.
 file(GLOB ALGORITHMS_TESTS "tests/*cc")
 
-# Build executable - where algorithmsCore &
+# Build executable - where algorithms &
 # gmock are it's dependencies.
-add_executable(algorithmsTests ${ALGORITHMS_TESTS})
+add_executable(algorithmstests ${ALGORITHMS_TESTS})
 
-
-# Link dependencies of algorithmsTests lib.
-target_link_libraries(algorithmsTests algorithmsCore gmock_main)
+# Link dependencies of algorithmstests lib.
+target_link_libraries(algorithmstests algorithms gmock_main)
 
 # Add Test for CTest.
-add_test(AlgorithmsLibs algorithmsTests)
+add_test(tests algorithmstests)

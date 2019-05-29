@@ -1,4 +1,4 @@
-#include "algorithms/ds.h"
+#include "algorithms/ds.hpp"
 
 // #include <functional>
 #include <iostream>
