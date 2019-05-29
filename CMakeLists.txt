@@ -33,41 +33,41 @@ set(BUILD_DIR "${CMAKE_SOURCE_DIR}/build")
 
 
 # !----------------- Definitions, Optinos & Macros.-----------------!#
-option(ALGORITHMS_DEBUG "Build algorithms in Debug mode." ON)
-option(ALGORITHMS_BUILD_STATIC "Build as a static library." ON)
-option(ALGORITHMS_BUILD_DLL "Build as Dynamic Linked Library." OFF)
-option(ALGORITHMS_BUILD_DIST "Turn on algorithms distribution build." OFF)
+option(ALG_DEBUG "Build algorithms in Debug mode." ON)
+option(ALG_BUILD_STATIC "Build as a static library." ON)
+option(ALG_BUILD_DLL "Build as Dynamic Linked Library." OFF)
+option(ALG_BUILD_DIST "Turn on algorithms distribution build." OFF)
 
-option(ALGORITHMS_ENABLE_ASSERTS "Enable algorithms assertions." ON)
-option(ALGORITHMS_USE_EXTERNAL_JSON "Use an external JSON library." OFF)
-option(ALGORITHMS_USE_PCH "Use algorithms's pre-compiled header." OFF)
-option(ALGORITHMS_USE_SYSTEM_INCLUDES
+option(ALG_ENABLE_ASSERTS "Enable algorithms assertions." ON)
+option(ALG_USE_EXTERNAL_JSON "Use an external JSON library." OFF)
+option(ALG_USE_PCH "Use algorithms's pre-compiled header." OFF)
+option(ALG_USE_SYSTEM_INCLUDES
        "Use C++ includes in pre-compiled headers (Recommended)." ON)
 
 # Set default Build DataType.
 if(NOT CMAKE_BUILD_TYPE)
-  if(ALGORITHMS_DEBUG)
+  if(ALG_DEBUG)
     set(CMAKE_BUILD_TYPE "Debug")
   else()
     set(CMAKE_BUILD_TYPE "Release")
-  endif(ALGORITHMS_DEBUG)
+  endif(ALG_DEBUG)
 endif(NOT CMAKE_BUILD_TYPE)
 
 # Based on platform.
 if(APPLE)
-  set(ALGORITHMS_PLATFORM_UNIX ON) # Unix-like.
-  set(ALGORITHMS_PLATFORM_DARWIN ON) # MacOS.
+  set(ALG_PLATFORM_UNIX ON) # Unix-like.
+  set(ALG_PLATFORM_DARWIN ON) # MacOS.
 elseif(UNIX)
-  set(ALGORITHMS_PLATFORM_UNIX ON) # Linux.
+  set(ALG_PLATFORM_UNIX ON) # Linux.
 elseif(WIN32)
-  set(ALGORITHMS_PLATFORM_WINDOWS ON) # Windows.
+  set(ALG_PLATFORM_WINDOWS ON) # Windows.
 endif()
 
 # Based on build-type.
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-  set(ALGORITHMS_ENABLE_ASSERTS ON)
+  set(ALG_ENABLE_ASSERTS ON)
 else()
-  set(ALGORITHMS_ENABLE_ASSERTS OFF)
+  set(ALG_ENABLE_ASSERTS OFF)
 endif()
 
 # !----------------- Set warning & compiler flags.-----------------!#
@@ -108,7 +108,7 @@ if(NOT CONFIGURED_ONCE)
   configure_file(# Where configurations are defined.
                  "${ALGORITHMS_DIR}/config/cpp/config.hpp.in"
                  # Where CMake writes auto configuration @build time.
-                 "${ALGORITHMS_DIR}/include/hazel/config.hpp")
+                 "${ALGORITHMS_DIR}/include/config.hpp")
 
   # Setting warnings & compiler flags.
   set(CMAKE_CXX_FLAGS ${compiler_flags}

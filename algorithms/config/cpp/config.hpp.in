@@ -11,16 +11,16 @@
 #define PROJECT_VERSION_PATCH @PROJECT_VERSION_PATCH@
 
 // Platforms.
-#cmakedefine ALGORITHM_PLATFORM_UNIX
-#cmakedefine ALGORITHM_PLATFORM_DARWIN
-#cmakedefine ALGORITHM_PLATFORM_WINDOWS
+#cmakedefine ALG_PLATFORM_UNIX
+#cmakedefine ALG_PLATFORM_DARWIN
+#cmakedefine ALG_PLATFORM_WINDOWS
 
 // Build Configurations.
-#cmakedefine ALGORITHM_DEBUG
-#cmakedefine ALGORITHM_BUILD_DLL
-#cmakedefine ALGORITHM_BUILD_DIST
-#cmakedefine ALGORITHM_BUILD_STATIC
+#cmakedefine ALG_DEBUG
+#cmakedefine ALG_BUILD_DLL
+#cmakedefine ALG_BUILD_DIST
+#cmakedefine ALG_BUILD_STATIC
 
 // Utilities.
-#cmakedefine ALGORITHM_ENABLE_ASSERTS
-#cmakedefine ALGORITHM_USE_SYSTEM_INCLUDES
+#cmakedefine ALG_ENABLE_ASSERTS
+#cmakedefine ALG_USE_SYSTEM_INCLUDES
