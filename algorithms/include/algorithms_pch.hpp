@@ -2,7 +2,7 @@
 #define ALGORITHMS_PCH_HPP
 
 // algorithms "static" includes.
-#include "config.hpp"
+#include "algorithms/config.hpp"
 
 // #ifdef ALG_USE_SYSTEM_INCLUDES
 

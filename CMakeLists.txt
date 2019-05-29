@@ -108,7 +108,7 @@ if(NOT CONFIGURED_ONCE)
   configure_file(# Where configurations are defined.
                  "${ALGORITHMS_DIR}/config/cpp/config.hpp.in"
                  # Where CMake writes auto configuration @build time.
-                 "${ALGORITHMS_DIR}/include/config.hpp")
+                 "${ALGORITHMS_DIR}/include/algorithms/config.hpp")
 
   # Setting warnings & compiler flags.
   set(CMAKE_CXX_FLAGS ${compiler_flags}
